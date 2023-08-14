@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+
+    <title>Maunga Club - Main Page</title>
+  </head>
+  <body style="background: black; animation: FadeIn 0.75s, SlideLeft 0.75s">
+    <div
+      class="parallax"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url(img/mountain_view_1.jpg);
+        justify-content: center;
+      "
+    >
+      <header
+        style="
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          margin-bottom: 20vh;
+        "
+        id="navbar"
+      >
+        <div
+          style="
+            padding-top: 1%;
+            margin: 0px 2vw;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+          "
+        >
+          <img src="img/Maunga_Club_white.png" style="height: 8rem" />
+          <nav>
+            <input
+              type="button"
+              onclick="window.location.href"
+              class="navigation_button"
+              value="COMPARE"
+            />
+            <input
+              type="button"
+              onclick="window.location.href='index.html'"
+              class="navigation_button"
+              value="PRICING"
+            />
+            <input
+              type="button"
+              onclick="window.location.href='index.html'"
+              class="navigation_button"
+              value="REGISTER"
+            />
+            <input
+              type="button"
+              onclick="window.location.href='index.html'"
+              class="navigation_button"
+              value="LOGIN"
+            />
+          </nav>
+        </div>
+      </header>
+      <div class="about-us">
+        <t style="font-size: 3rem; font-weight: bold">About Us</t>
+        <div class="about-us-para">
+          <p style="font-size: 1.5rem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
+            mattis rhoncus urna neque viverra. Suspendisse in est ante in. Vel
+            orci porta non pulvinar neque laoreet. Aenean pharetra magna ac
+            placerat vestibulum lectus. Lectus sit amet est placerat in egestas
+            erat imperdiet sed. Dolor sit amet consectetur adipiscing. Ut
+            porttitor leo a diam sollicitudin. Augue interdum velit euismod in
+            pellentesque massa placerat. Aliquam ut porttitor leo a diam
+            sollicitudin.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        margin: 1vh 1vw;
+        border: solid black 0.2rem;
+        opacity: 0;
+        transform: translateX(20vw);
+        height: 55vh;
+      "
+      id="kakapo"
+    >
+      <div class="text-box" style="border-right: solid black 0.2rem">
+        <t style="font-size: 2rem; text-decoration: underline">Kakapo</t>
+        <p style="margin-top: 2vh; font-size: 1.5rem">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus
+          scelerisque eleifend donec pretium vulputate. Consectetur adipiscing
+          elit duis tristique sollicitudin nibh. Pellentesque dignissim enim sit
+          amet venenatis urna cursus eget. Mi in nulla posuere sollicitudin
+          aliquam ultrices sagittis. Sit amet cursus sit amet dictum sit amet.
+          Egestas sed sed risus pretium quam vulputate dignissim suspendisse.
+          Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Nullam
+          non nisi est sit amet. Tristique senectus et netus et malesuada fames
+          ac. Felis eget nunc lobortis mattis. Rhoncus urna neque viverra justo.
+          Habitasse platea dictumst quisque sagittis purus sit. Blandit massa
+          enim nec dui nunc mattis enim ut tellus. Lacus vel facilisis volutpat
+          est velit egestas. Quam vulputate dignissim suspendisse in est ante in
+          nibh. Vitae justo eget magna fermentum. Scelerisque mauris
+          pellentesque pulvinar pellentesque habitant morbi tristique. Dui
+          sapien eget mi proin. Dictumst quisque sagittis purus sit amet.
+          Elementum nisi quis eleifend quam adipiscing. Duis tristique
+          sollicitudin nibh sit amet commodo. Vestibulum mattis ullamcorper
+          velit sed. Aenean euismod elementum nisi quis eleifend quam.
+          Consectetur lorem donec massa sapien. Ac feugiat sed lectus
+          vestibulum. Suscipit tellus mauris a diam maecenas sed enim. Nunc vel
+          risus commodo viverra maecenas accumsan lacus vel facilisis. Viverra
+          suspendisse potenti nullam ac tortor vitae purus faucibus ornare.
+        </p>
+      </div>
+      <img
+        src="img/kakapo/cabin_exterior.jpg"
+        style="width: 30vw; object-fit: cover; object-position: 0% 100%"
+      />
+    </div>
+
+    <div
+      style="
+        display: flex;
+        margin: 1vh 1vw;
+        border: solid black 0.2rem;
+        transform: translateX(-20vw);
+        opacity: 0;
+        height: 55vh;
+      "
+      id="kereru"
+    >
+      <img
+        src="img/kereru/cabin_exterior.jpg"
+        style="object-fit: cover; object-position: 0% 0%; width: 30vw"
+      />
+      <div class="text-box" style="border-left: solid black 0.2rem">
+        <t style="font-size: 2rem; text-decoration: underline">Kereru</t>
+        <p style="margin-top: 2vh; font-size: 1.5rem">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus
+          scelerisque eleifend donec pretium vulputate. Consectetur adipiscing
+          elit duis tristique sollicitudin nibh. Pellentesque dignissim enim sit
+          amet venenatis urna cursus eget. Mi in nulla posuere sollicitudin
+          aliquam ultrices sagittis. Sit amet cursus sit amet dictum sit amet.
+          Egestas sed sed risus pretium quam vulputate dignissim suspendisse.
+          Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Nullam
+          non nisi est sit amet. Tristique senectus et netus et malesuada fames
+          ac. Felis eget nunc lobortis mattis. Rhoncus urna neque viverra justo.
+          Habitasse platea dictumst quisque sagittis purus sit. Blandit massa
+          enim nec dui nunc mattis enim ut tellus. Lacus vel facilisis volutpat
+          est velit egestas. Quam vulputate dignissim suspendisse in est ante in
+          nibh. Vitae justo eget magna fermentum. Scelerisque mauris
+          pellentesque pulvinar pellentesque habitant morbi tristique. Dui
+          sapien eget mi proin. Dictumst quisque sagittis purus sit amet.
+          Elementum nisi quis eleifend quam adipiscing. Duis tristique
+          sollicitudin nibh sit amet commodo. Vestibulum mattis ullamcorper
+          velit sed. Aenean euismod elementum nisi quis eleifend quam.
+          Consectetur lorem donec massa sapien. Ac feugiat sed lectus
+          vestibulum. Suscipit tellus mauris a diam maecenas sed enim. Nunc vel
+          risus commodo viverra maecenas accumsan lacus vel facilisis. Viverra
+          suspendisse potenti nullam ac tortor vitae purus faucibus ornare.
+        </p>
+      </div>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        margin: 1vh 1vw;
+        border: solid black 0.2rem;
+        transform: translateX(20vw);
+        opacity: 0;
+      "
+      id="pukeko"
+    >
+      <div
+        class="text-box"
+        style="border-right: solid black 0.2rem; height: 55vh"
+      >
+        <t style="font-size: 2rem; text-decoration: underline">Kereru</t>
+        <p style="margin-top: 2vh; font-size: 1.5rem">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus
+          scelerisque eleifend donec pretium vulputate. Consectetur adipiscing
+          elit duis tristique sollicitudin nibh. Pellentesque dignissim enim sit
+          amet venenatis urna cursus eget. Mi in nulla posuere sollicitudin
+          aliquam ultrices sagittis. Sit amet cursus sit amet dictum sit amet.
+          Egestas sed sed risus pretium quam vulputate dignissim suspendisse.
+          Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Nullam
+          non nisi est sit amet. Tristique senectus et netus et malesuada fames
+          ac. Felis eget nunc lobortis mattis. Rhoncus urna neque viverra justo.
+          Habitasse platea dictumst quisque sagittis purus sit. Blandit massa
+          enim nec dui nunc mattis enim ut tellus. Lacus vel facilisis volutpat
+          est velit egestas. Quam vulputate dignissim suspendisse in est ante in
+          nibh. Vitae justo eget magna fermentum. Scelerisque mauris
+          pellentesque pulvinar pellentesque habitant morbi tristique. Dui
+          sapien eget mi proin. Dictumst quisque sagittis purus sit amet.
+          Elementum nisi quis eleifend quam adipiscing. Duis tristique
+          sollicitudin nibh sit amet commodo. Vestibulum mattis ullamcorper
+          velit sed. Aenean euismod elementum nisi quis eleifend quam.
+          Consectetur lorem donec massa sapien. Ac feugiat sed lectus
+          vestibulum. Suscipit tellus mauris a diam maecenas sed enim. Nunc vel
+          risus commodo viverra maecenas accumsan lacus vel facilisis. Viverra
+          suspendisse potenti nullam ac tortor vitae purus faucibus ornare.
+        </p>
+      </div>
+      <img
+        src="img/pukeko/chalet_exterior.jpg"
+        style="width: 30vw; object-fit: cover; object-position: 0% 100%"
+      />
+    </div>
+
+    <div style="height: 100vh"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/triggerscroll.js" defer></script>
+  </body>
+</html>
