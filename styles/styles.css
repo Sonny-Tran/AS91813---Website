@@ -77,3 +77,15 @@ body {
   padding: 1vh 2vw;
   display: block;
 }
+
+.container {
+  overscroll-behavior: none;
+  width: 300vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.panel {
+  height: 80vh;
+}

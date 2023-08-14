@@ -25,47 +25,31 @@ function init() {
       toggleActions: "play none reverse none",
     },
   });
-
-  gsap.to("#kakapo", {
-    opacity: 1,
-    x: window.innerWidth * 0,
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#kakapo",
-      start: "0% 75%",
-      end: "100% 20%",
-      markers: true,
-      toggleActions: "play none none none",
-    },
-  });
-
-  gsap.to("#kereru", {
-    opacity: 1,
-    x: window.innerWidth * 0,
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#kereru",
-      start: "0% 75%",
-      end: "100% 20%",
-      markers: true,
-      toggleActions: "play none none none",
-    },
-  });
-
-  gsap.to("#pukeko", {
-    opacity: 1,
-    x: window.innerWidth * 0,
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#pukeko",
-      start: "0% 75%",
-      end: "100% 20%",
-      markers: true,
-      toggleActions: "play none none none",
-    },
-  });
 }
 
 window.addEventListener("load", function () {
   init();
+});
+
+let sections = gsap.utils.toArray(".panel");
+
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".container",
+    pin: true,
+    scrub: 1,
+    markers: true,
+    start: "50% 50%",
+    snap: {
+      snapTo: 1 / (sections.length - 1),
+      duration: 0.2,
+      delay: 0.01,
+      ease: Power0.easeNone,
+      snap: 0.1,
+    },
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: window.innerHeight * 2 + "px",
+  },
 });
