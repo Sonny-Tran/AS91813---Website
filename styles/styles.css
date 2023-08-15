@@ -19,6 +19,7 @@ html,
 body {
   overflow-y: scroll; /* overflow is to keep the function of scrolling while hiding the scrollbar */
   overflow-x: hidden; /* stop users from scrolling horizonally */
+  overscroll-behavior: none;
 }
 
 .parallax {
@@ -73,19 +74,21 @@ body {
   background-color: #f9f9f9;
   font-size: 1.2rem;
   text-align: center;
-  width: 68vw;
-  padding: 1vh 2vw;
+  padding: 1vh 1vw;
+  width: 70%;
   display: block;
 }
 
 .container {
   overscroll-behavior: none;
-  width: 300vw;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-wrap: nowrap;
 }
 
 .panel {
-  height: 80vh;
+  position: absolute;
+  height: 100%;
+  left: 100%;
+  width: 100vw;
 }
