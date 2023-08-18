@@ -19,18 +19,37 @@ html,
 body {
   overflow-y: scroll; /* overflow is to keep the function of scrolling while hiding the scrollbar */
   overflow-x: hidden; /* stop users from scrolling horizonally */
-  overscroll-behavior: none;
+  overscroll-behavior: none; /* Prevents mobile users from pushing outside of the website's boundary */
+  opacity: 1;
 }
 
+/* Creates a parallax effect where the background doesn't move with the div */
 .parallax {
   height: 100vh;
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
 }
 
+#navbar {
+  position: fixed;
+  z-index: 9999999;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(0.5vh);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: ease 0.25s;
+  &--scrolled {
+    height: 1vh;
+  }
+}
+/* Button styling for the navbar */
 .navigation_button {
   cursor: pointer;
   background: #f9f9f9;
@@ -46,49 +65,77 @@ body {
   transition: box-shadow 0.25s, transform 0.25s, background-color 0.25s;
 }
 
+/* Moves the navigation button upwards and increases the shadow's height, creating a 3d button effect */
 .navigation_button:hover {
   transform: translateY(-0.25vh);
   box-shadow: 0px 0.5vh 0px #b9b9b9;
 }
 
+/* Moves the navigation button downwards when clicked and erases shadow, making it look like you pushed the button */
 .navigation_button:active {
   transform: translateY(0.1vh);
   box-shadow: none;
 }
 
 .about-us {
+  /* To align the div in the centre */
   text-align: center;
   margin: auto;
   width: 50%;
-  background-color: rgba(249, 249, 249, 0.75);
-  backdrop-filter: blur(5px);
+  /* Creates a frosted glass effect */
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 100vw rgba(255, 255, 255, 1);
+  backdrop-filter: blur(0.5vh);
   padding: 1vh 0vw;
 }
 
+/* Creates space bewteen title and text, adds extra padding to div overall to make it seem more centered */
 .about-us-para {
-  margin-top: 3vh;
+  margin-top: 2.5%;
   padding: 1vh 1vw;
 }
 
+/* text box styling, aligns text to the center, take up as much space as possible and rounded borders */
 .text-box {
-  background-color: #f9f9f9;
-  font-size: 1.2rem;
   text-align: center;
-  padding: 1vh 1vw;
-  width: 70%;
-  display: block;
+  padding: 5% 10%;
+  max-width: 100%;
+  border-radius: 5vh;
 }
 
+.text-box > h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.text-box > ul {
+  margin-top: 10%;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+/* Creates spacing between each bullet point */
+
+.text-box > ul > li {
+  margin-top: 5%;
+}
 .container {
   overscroll-behavior: none;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
 }
 
 .panel {
   position: absolute;
   height: 100%;
   left: 100%;
-  width: 100vw;
+  border-radius: 5vh;
+  overflow: hidden;
+  border: solid #f9f9f9 0.5vw;
+  background-color: #91c8e4;
+  width: 23vw;
+  height: 46vh;
+  opacity: 1;
 }
