@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'> <!-- Embedded Open Sans font so it can be used in the website-->
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/animations.css" />
 
     <title>Maunga Club - Main Page</title>
   </head>
@@ -24,9 +23,15 @@
         <nav>
           <input
             type="button"
-            onclick="window.location.href"
+            onclick="ScrollDown(container, 0.4);"
             class="navigation_button"
             value="COMPARE"
+          >
+          <input
+            type="button"
+            onclick="ScrollDown(image_container, 80);"
+            class="navigation_button"
+            value="GALLERY"
           >
           <input
             type="button"
@@ -46,6 +51,7 @@
             class="navigation_button"
             value="LOGIN"
           >
+          </script>
         </nav>
       </div>
     </div> 
@@ -79,45 +85,62 @@
         </div>
       </div>
     </div>
-    <div class="parent">
-      <div class="container">
-        <section id="kakapo" class="panel">
-          <div class="text-box">
-            <h2>Kakapo</h2>
-            <ul style="list-style-type: disc">
-              <li>Largest of the chalets</li>
-              <li>large kitchen, dining and living area</li>
-              <li>Great amenities</li>
-              <li>Maximum Adults: 10</li>
-              <li>Maximum Children: 30</li>
-            </ul>
-          </div>
-        </section>
-        <section id="kereru" class="panel">
-          <div class="text-box">
-            <h2>Kereru</h2>
-            <ul style="list-style-type: disc">
-              <li>Great for large groups/families wanting a chalet to themselves</li>
-              <li>Limits on adult/child number ensure comfortable stay</li>
-              <li>Maximum Adults: 6</li>
-              <li>Maximum Children: 15</li>
-            </ul>
-        </section>
-        <section id="pukeko" class="panel">
-          <div class="text-box">
-            <h2>Pukeko</h2>
-            <ul style="list-style-type: disc">
-            <li>Great option for a family</li>
-            <li>2 bedrooms</li>
-            <li>Perfect for families with 2-4 children</li>
-            <li>Separate living area</li>
-            <li>Maximum Adults: 2</li>
-            <li>Maximum Children: 4</li>
-            </ul>
-        </section>
-      </div>
+    <div id="container">
+      <section id="kakapo" class="panel">
+        <div class="text-box">
+          <h2>Kakapo</h2>
+          <ul style="list-style-type: disc">
+            <li>Largest of the chalets</li>
+            <li>large kitchen, dining and living area</li>
+            <li>Great amenities</li>
+            <li>Maximum Adults: 10</li>
+            <li>Maximum Children: 30</li>
+          </ul>
+        </div>
+      </section>
+      <section id="kereru" class="panel">
+        <div class="text-box">
+          <h2>Kereru</h2>
+          <ul style="list-style-type: disc">
+            <li>Great for large groups/families wanting a chalet to themselves</li>
+            <li>Limits on adult/child number ensure comfortable stay</li>
+            <li>Maximum Adults: 6</li>
+            <li>Maximum Children: 15</li>
+          </ul>
+      </section>
+      <section id="pukeko" class="panel">
+        <div class="text-box">
+          <h2>Pukeko</h2>
+          <ul style="list-style-type: disc">
+          <li>Great option for a family</li>
+          <li>2 bedrooms</li>
+          <li>Perfect for families with 2-4 children</li>
+          <li>Separate living area</li>
+          <li>Maximum Adults: 2</li>
+          <li>Maximum Children: 4</li>
+          </ul>
+      </section>
     </div>
-    <div style="height: 100vh"></div>
+
+    <div style="height: 100vh; 
+    display: flex;
+    flex-direction: row;
+    width: fit-content;  
+    content-visibility: auto;" id="image_container">
+      <img src="img/kakapo/bunk_room.jpg" class="image">
+      <img src="img/kakapo/cabin_exterior.jpg" class="image">
+      <img src="img/kakapo/cabin_view.jpg" class="image">
+      <img src="img/kakapo/hallway.jpg" class="image">
+      <img src="img/kereru/adult_bedroom.jpg" class="image">
+      <img src="img/kereru/cabin_exterior.jpg" class="image">
+      <img src="img/kereru/kids_bedroom.jpg" class="image">
+      <img src="img/kereru/kitchen.jpg" class="image">
+      <img src="img/pukeko/adult_bedroom.jpg" class="image">
+      <img src="img/pukeko/bathroom.jpg" class="image">
+      <img src="img/pukeko/chalet_exterior.jpg" class="image">
+      <img src="img/pukeko/chalet_view.jpg" class="image">
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/triggerscroll.js" defer></script>

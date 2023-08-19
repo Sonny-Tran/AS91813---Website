@@ -119,7 +119,7 @@ body {
 .text-box > ul > li {
   margin-top: 5%;
 }
-.container {
+#container {
   overscroll-behavior: none;
   height: 100vh;
   display: flex;
@@ -138,4 +138,13 @@ body {
   width: 23vw;
   height: 46vh;
   opacity: 1;
+}
+
+#image_container {
+  padding-top: 5vh;
+}
+
+#image_container > .image {
+  height: 50vh;
+  object-fit: contain;
 }
