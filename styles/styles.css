@@ -35,7 +35,7 @@ body {
 
 #navbar {
   position: fixed;
-  z-index: 9999999;
+  z-index: 100;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(0.5vh);
   display: flex;
@@ -140,11 +140,50 @@ body {
   opacity: 1;
 }
 
-#image_container {
-  padding-top: 5vh;
+#gallery {
+  text-align: center;
 }
 
-#image_container > .image {
-  height: 50vh;
+#gallery > h2 {
+  font-size: 5vh;
+  text-decoration: underline;
+  font-weight: bold;
+  color: #f9f9f9;
+}
+
+#imgcontainer {
+  padding-top: 5vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  gap: 1vw;
+  content-visibility: auto;
+}
+
+#imgcontainer > .image {
+  height: 75vh;
   object-fit: contain;
+}
+
+#imgcontainer > .image:hover {
+  cursor: pointer;
+}
+
+#fullpage {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  background-color: black;
+}
+
+#fullpage:hover {
+  cursor: zoom-out;
 }

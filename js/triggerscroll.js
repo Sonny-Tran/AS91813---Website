@@ -82,23 +82,34 @@ var action = gsap
   .to({}, { duration: 0.5 }); // an empty tween to generate a pause at the end
 
 function ScrollDown(element, margin) {
+  console.log(element);
   dims = element.getBoundingClientRect();
   body = element.getBoundingClientRect();
+  var progress = action.progress();
   marginPercent = (margin / 100) * window.innerHeight;
   offset = dims.bottom - body.top;
+  console.log(progress);
 
-  window.scrollTo({
-    top: offset + marginPercent,
-    behavior: "smooth",
-  });
-
-  if (action.progress != 1) {
+  if (progress != 1) {
+    pin_space = document.getElementsByClassName("pin-spacer");
+    pin_spacer = pin_space[0].getBoundingClientRect();
+    window.scrollTo({
+      top: pin_spacer.bottom + window.innerHeight,
+      duration: 2,
+      behavior: "smooth",
+    });
     setTimeout(() => {
       window.scrollTo({
         top: offset + marginPercent,
         behavior: "smooth",
       });
-    }, 2443);
+    }, 510);
+  } else {
+    window.scrollTo({
+      top: offset + marginPercent,
+      behavior: "smooth",
+    });
+    console.log("ran2");
   }
 }
 
@@ -108,9 +119,7 @@ let loop = horizontalLoop(".image", {
   paddingRight: 25,
 });
 
-/*
-
-  function setDirection(value) {
+function setDirection(value) {
   if (loop.direction !== value) {
     gsap.to(loop, { timeScale: value, duration: 0.3, overwrite: true });
     loop.direction = value;
@@ -124,7 +133,16 @@ Observer.create({
   onUp: () => setDirection(-1),
 });
 
-*/
+function getPics() {} //just for this demo
+const imgs = document.querySelectorAll("#gallery .image");
+const fullPage = document.querySelector("#fullpage");
+
+imgs.forEach((img) => {
+  img.addEventListener("click", function () {
+    fullPage.style.backgroundImage = "url(" + img.src + ")";
+    fullPage.style.display = "block";
+  });
+});
 
 // Horizontal Loop
 function horizontalLoop(items, config) {
