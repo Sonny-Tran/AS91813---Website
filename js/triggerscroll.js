@@ -22,95 +22,51 @@ gsap.to(".about-us", {
   opacity: 0,
   scrollTrigger: {
     trigger: ".about-us",
-    start: "0% 0%",
-    end: "5% 0%",
+    start: "-25% 0%",
+    end: "-20% 0%",
+    markers: true,
     toggleActions: "play none reverse none",
   },
 });
 
-var slides = document.querySelectorAll(".panel");
-const total_slides_num = gsap.utils.toArray(".panel");
-var slides_width = window.innerWidth * 0.29; // width of window * viewwidth of panel + desired margin-x
-let pinTarget = document.querySelector(".child");
+gsap.to("#kakapo", {
+  autoAlpha: 1,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#kakapo",
+    start: "45% 50%",
+    ease: Power4.easeInOut,
+  },
+});
 
-var action = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: "#container",
-      pin: true,
-      scrub: 0.1,
-      start: "center center",
-      end: "=+" + window.innerHeight * total_slides_num.length,
-      markers: true,
-      invalidateOnRefresh: true,
-      ease: "power2.inOut",
-      once: true,
-      // deletes pin-space after animation is finished note: record this to show how it fixed things
-      onLeave: function (self) {
-        self.scroll(self.start); // Scrolls back to the start
-        self.disable(); // Disables scrolltrigger, removing markers and pin-space
-        self.animation.progress(1); // sets the animation progress to be finished so content doesn't disappear
-        ScrollTrigger.refresh(); // refreshes scrolltrigger calculations since the overall height changed
-      },
-      snap: {
-        snapTo: 1,
-        duration: 1.5,
-        delay: 0.01,
-        ease: "power1.inOut",
-      },
-    },
-  })
-  .to({}, { duration: 0.05 }) // an empty tween to generate a delay at the start
-  .to("#kakapo", {
-    left: window.innerWidth * (1 / total_slides_num.length) - slides_width, // Used to animate the divs and decide where they're placed.
-    duration: 1, // relative unit with the 'end' variable in gsap.timeline, decides how far user has to scroll to finsih the animation.
-    ease: "none", // no acceleration and deacceleration in the animation
-    stagger: 2, // relative unit with the 'end' variable in gsap.timeline, decides how far user has to scroll to trigger next animation.
-  })
-  .to("#kereru", {
-    left: window.innerWidth * (2 / total_slides_num.length) - slides_width, //formula: window.innerWidth * (slide-number / total-number-of-slides.length) - slides_width
-    duration: 1,
-    ease: "none",
-    stagger: 2,
-  })
-  .to("#pukeko", {
-    left: 1 * window.innerWidth * (3 / total_slides_num.length) - slides_width,
-    duration: 1,
-    ease: "none",
-    stagger: 2,
-  })
-  .to({}, { duration: 0.5 }); // an empty tween to generate a pause at the end
+gsap.to("#kereru", {
+  autoAlpha: 1,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#kereru",
+    start: "45% 50%",
+    ease: Power4.easeInOut,
+  },
+});
 
-function ScrollDown(element, margin) {
-  console.log(element);
-  dims = element.getBoundingClientRect();
-  body = element.getBoundingClientRect();
-  var progress = action.progress();
-  marginPercent = (margin / 100) * window.innerHeight;
-  offset = dims.bottom - body.top;
-  console.log(progress);
+gsap.to("#pukeko", {
+  autoAlpha: 1,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#pukeko",
+    start: "45% 50%",
+    ease: Power4.easeInOut,
+  },
+});
 
-  if (progress != 1) {
-    pin_space = document.getElementsByClassName("pin-spacer");
-    pin_spacer = pin_space[0].getBoundingClientRect();
-    window.scrollTo({
-      top: pin_spacer.bottom + window.innerHeight,
-      duration: 2,
-      behavior: "smooth",
-    });
-    setTimeout(() => {
-      window.scrollTo({
-        top: offset + marginPercent,
-        behavior: "smooth",
-      });
-    }, 510);
-  } else {
-    window.scrollTo({
-      top: offset + marginPercent,
-      behavior: "smooth",
-    });
-    console.log("ran2");
-  }
+function ScrollDown(element) {
+  var elDistanceToTop =
+    window.pageYOffset + element.getBoundingClientRect().top;
+
+  window.scrollTo({
+    top: elDistanceToTop,
+    behavior: "smooth",
+  });
 }
 
 let loop = horizontalLoop(".image", {
@@ -133,15 +89,23 @@ Observer.create({
   onUp: () => setDirection(-1),
 });
 
-function getPics() {} //just for this demo
-const imgs = document.querySelectorAll("#gallery .image");
+function getPics() {} //just for me
+const imgs = document.querySelectorAll(".fullscreen-img");
 const fullPage = document.querySelector("#fullpage");
 
 imgs.forEach((img) => {
   img.addEventListener("click", function () {
+    setDirection(0);
     fullPage.style.backgroundImage = "url(" + img.src + ")";
     fullPage.style.display = "block";
   });
+});
+
+var item = document.getElementById("kakapo");
+
+window.addEventListener("wheel", function (e) {
+  if (e.deltaY > 0) item.scrollLeft += 100;
+  else item.scrollLeft -= 100;
 });
 
 // Horizontal Loop
