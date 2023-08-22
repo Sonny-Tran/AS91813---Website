@@ -29,31 +29,44 @@ gsap.to(".about-us", {
   },
 });
 
-// Get a reference to the element that you want to work with
-var img = document.querySelectorAll(".image-container");
-
-// Set up an event handler. Notice that we don't use "on" in front
-// of the event name when doing it this way.
-
-img.forEach((image) => {
-  let panel = image.closest(".panel");
-  let img_container = image.closest(".image-container");
-  let textbox = panel.querySelector(".text-box");
-
-  image.addEventListener("mouseover", function () {
-    textbox.classList.add("text-box-hide");
-    img_container.classList.add("image-container-expand");
-  });
-
-  image.addEventListener("mouseout", function () {
-    textbox.classList.remove("text-box-hide");
-    img_container.classList.remove("image-container-expand");
-  });
+gsap.from("#kakapo", {
+  opacity: 0,
+  xPercent: 20,
+  duration: 0.5,
+  ease: Elastic.easeOut.config(1, 0.75),
+  scrollTrigger: {
+    trigger: "#kakapo",
+    start: "110% 100%",
+    markers: true,
+    once: true,
+  },
 });
 
-function changeDef(event) {
-  console.log(event.target);
-}
+gsap.from("#kereru", {
+  opacity: 0,
+  xPercent: 20,
+  duration: 0.5,
+  ease: Elastic.easeOut.config(1, 0.75),
+  scrollTrigger: {
+    trigger: "#kereru",
+    start: "110% 100%",
+    markers: true,
+    once: true,
+  },
+});
+
+gsap.from("#pukeko", {
+  opacity: 0,
+  xPercent: 20,
+  duration: 0.5,
+  ease: Elastic.easeOut.config(1, 0.75),
+  scrollTrigger: {
+    trigger: "#pukeko",
+    start: "110% 100%",
+    markers: true,
+    once: true,
+  },
+});
 
 let loop = horizontalLoop(".image", {
   speed: 3,
@@ -73,18 +86,6 @@ Observer.create({
   type: "wheel,scroll,touch",
   onDown: () => setDirection(1),
   onUp: () => setDirection(-1),
-});
-
-function getPics() {} //just for me
-const imgs = document.querySelectorAll(".fullscreen-img");
-const fullPage = document.querySelector("#fullpage");
-
-imgs.forEach((img) => {
-  img.addEventListener("click", function () {
-    setDirection(0);
-    fullPage.style.backgroundImage = "url(" + img.src + ")";
-    fullPage.style.display = "block";
-  });
 });
 
 var item = document.getElementById("kakapo");

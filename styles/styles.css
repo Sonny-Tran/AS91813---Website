@@ -37,8 +37,8 @@ body {
 #navbar {
   position: fixed;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(0.5vh);
+  background-color: rgba(54, 156, 206, 0.2);
+  backdrop-filter: blur(0.5vw);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,26 +50,27 @@ body {
     height: 1vh;
   }
 }
+
 /* Button styling for the navbar */
 .navigation_button {
   cursor: pointer;
-  background: #f9f9f9;
+  background: rgb(248, 252, 253);
   color: rgb(0, 0, 0);
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-size: 1.5rem; /* Works based on default font size,so 1.5 times default font size */
+  padding: 1vw;
   text-align: center;
   text-decoration: none;
   border-radius: 0.5rem;
-  margin: 1rem;
+  margin: 1vw;
   opacity: 1;
-  box-shadow: 0px 0.25vh 0px #b9b9b9;
+  box-shadow: 0px 0.25vh 0px #d3e9f4;
   transition: box-shadow 0.25s, transform 0.25s, background-color 0.25s;
 }
 
 /* Moves the navigation button upwards and increases the shadow's height, creating a 3d button effect */
 .navigation_button:hover {
   transform: translateY(-0.25vh);
-  box-shadow: 0px 0.5vh 0px #b9b9b9;
+  box-shadow: 0px 0.5vh 0px #d3e9f4;
 }
 
 /* Moves the navigation button downwards when clicked and erases shadow, making it look like you pushed the button */
@@ -84,8 +85,9 @@ body {
   margin: auto;
   width: 50%;
   /* Creates a frosted glass effect */
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: inset 0 0 100vw rgba(255, 255, 255, 1);
+  background-color: rgba(145, 200, 228, 0.7);
+
+  box-shadow: inset 0 0 5vw rgba(255, 255, 255, 1);
   backdrop-filter: blur(0.5vh);
   padding: 1vh 0vw;
 }
@@ -104,17 +106,18 @@ body {
   overflow: hidden;
   border: solid black 0.2vw;
   background-color: transparent;
-  background-color: #91c8e4;
+  background-color: #f8fcfd;
   width: 80vw;
   height: 75vh;
   margin: 10vh auto;
   position: relative;
+  box-shadow: -0.25vw 0.25vw 0.5vw rgb(0, 0, 0, 0.25);
 }
 
 .text-box {
   text-align: center;
   padding: 2.5% 0 2.5% 5%;
-  width: 50%;
+  width: 100%;
   flex: 1;
   border-radius: 5vh;
   box-sizing: border-box;
@@ -138,7 +141,8 @@ body {
 }
 
 .image-container {
-  width: 50%;
+  width: 0%;
+  position: relative;
   display: flex;
   background-color: black;
   flex-direction: row;
@@ -146,10 +150,24 @@ body {
   object-fit: contain;
   content-visibility: auto;
   transition: all 1s;
-  background-color: #f9f9f9;
+  background-color: #91c8e4;
 }
 
 .image-container:hover {
+  cursor: pointer;
+}
+
+.img_expand {
+  width: 1.5rem; /* Makes Arrows break line instead of expanding div*/
+  background-color: #91c8e4;
+  height: 100%;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 0.25rem;
+}
+
+.img_expand:hover {
   cursor: pointer;
 }
 
@@ -164,8 +182,7 @@ body {
 
 .image-container-expand {
   width: 100vw;
-
-  background-color: #91c8e4;
+  background-color: #f8fcfd;
 }
 
 .image-container::-webkit-scrollbar {
@@ -179,13 +196,14 @@ body {
 
 .image-container::-webkit-scrollbar-thumb {
   height: 1.5vh;
-  border-radius: 1.5vh;
+  border-radius: 1vh;
   background-color: inherit;
   transition: all 1s;
 }
 
 .image-container::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
+  background-color: #91c8e4;
 }
 
 .image-container::-webkit-scrollbar:vertical {
@@ -213,23 +231,47 @@ body {
 
 #imgcontainer {
   padding-top: 5vh;
-  height: 100vh;
   display: flex;
   flex-direction: row;
-  width: fit-content;
-  gap: 1vw;
+  width: 100%;
   content-visibility: auto;
-  overflow-x: auto;
+  overflow-x: scroll;
+}
+
+#imgcontainer::-webkit-scrollbar {
+  height: 1.5vh;
+  background-color: grey;
+}
+
+#imgcontainer::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+#imgcontainer::-webkit-scrollbar-thumb {
+  height: 1.5vh;
+  border-radius: 1vh;
+  background-color: inherit;
+  transition: all 1s;
+}
+
+#imgcontainer::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background-color: #91c8e4;
+}
+
+#imgcontainer::-webkit-scrollbar:vertical {
+  display: none;
 }
 
 #imgcontainer > .image {
   height: 75vh;
   border: solid black 0.5vw;
   object-fit: contain;
+  margin-left: 1vw;
 }
 
 #imgcontainer > .image:hover {
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
 #fullpage {
@@ -244,6 +286,7 @@ body {
   background-repeat: no-repeat no-repeat;
   background-position: center center;
   background-color: black;
+  overflow: hidden;
 }
 
 #fullpage:hover {
