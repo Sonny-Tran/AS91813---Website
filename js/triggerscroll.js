@@ -29,44 +29,30 @@ gsap.to(".about-us", {
   },
 });
 
-gsap.to("#kakapo", {
-  autoAlpha: 1,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#kakapo",
-    start: "45% 50%",
-    ease: Power4.easeInOut,
-  },
-});
+// Get a reference to the element that you want to work with
+var img = document.querySelectorAll(".image-container");
 
-gsap.to("#kereru", {
-  autoAlpha: 1,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#kereru",
-    start: "45% 50%",
-    ease: Power4.easeInOut,
-  },
-});
+// Set up an event handler. Notice that we don't use "on" in front
+// of the event name when doing it this way.
 
-gsap.to("#pukeko", {
-  autoAlpha: 1,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#pukeko",
-    start: "45% 50%",
-    ease: Power4.easeInOut,
-  },
-});
+img.forEach((image) => {
+  let panel = image.closest(".panel");
+  let img_container = image.closest(".image-container");
+  let textbox = panel.querySelector(".text-box");
 
-function ScrollDown(element) {
-  var elDistanceToTop =
-    window.pageYOffset + element.getBoundingClientRect().top;
-
-  window.scrollTo({
-    top: elDistanceToTop,
-    behavior: "smooth",
+  image.addEventListener("mouseover", function () {
+    textbox.classList.add("text-box-hide");
+    img_container.classList.add("image-container-expand");
   });
+
+  image.addEventListener("mouseout", function () {
+    textbox.classList.remove("text-box-hide");
+    img_container.classList.remove("image-container-expand");
+  });
+});
+
+function changeDef(event) {
+  console.log(event.target);
 }
 
 let loop = horizontalLoop(".image", {

@@ -20,6 +20,7 @@ body {
   overflow-y: scroll; /* overflow is to keep the function of scrolling while hiding the scrollbar */
   overflow-x: hidden; /* stop users from scrolling horizonally */
   overscroll-behavior: none; /* Prevents mobile users from pushing outside of the website's boundary */
+  scroll-behavior: smooth; /* Creates smooth scrolling effect when clicking button */
   opacity: 1;
 }
 
@@ -96,13 +97,28 @@ body {
 }
 
 /* text box styling, aligns text to the center, take up as much space as possible and rounded borders */
+
+.panel {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: solid black 0.2vw;
+  background-color: transparent;
+  background-color: #91c8e4;
+  width: 80vw;
+  height: 75vh;
+  margin: 10vh auto;
+  position: relative;
+}
+
 .text-box {
   text-align: center;
-  padding: 2.5% 5%;
-  max-width: 100%;
-  height: 50%;
+  padding: 2.5% 0 2.5% 5%;
+  width: 50%;
+  flex: 1;
   border-radius: 5vh;
   box-sizing: border-box;
+  transition: all 1s;
 }
 
 .text-box > h2 {
@@ -121,32 +137,40 @@ body {
   margin-top: 2.5%;
 }
 
-.panel {
-  border-radius: 5vh;
-  overflow: hidden;
-  border: solid black 0.2vw;
-  background-color: #91c8e4;
-  width: 80vw;
-  height: 85vh;
-  margin: 10vh auto;
-  opacity: 0;
-  will-change: transform;
-}
-
 .image-container {
-  height: 50%;
+  width: 50%;
   display: flex;
-  gap: 1vw;
   background-color: black;
   flex-direction: row;
   overflow: auto;
   object-fit: contain;
   content-visibility: auto;
+  transition: all 1s;
+  background-color: #f9f9f9;
+}
+
+.image-container:hover {
+  cursor: pointer;
+}
+
+.text-box-hide {
+  transform: translateX(-10vw);
+  opacity: 0;
+  width: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.image-container-expand {
+  width: 100vw;
+
+  background-color: #91c8e4;
 }
 
 .image-container::-webkit-scrollbar {
-  height: 1.2vh;
-  background-color: gray;
+  height: 1.5vh;
+  background-color: black;
 }
 
 .image-container::-webkit-scrollbar-track {
@@ -154,14 +178,14 @@ body {
 }
 
 .image-container::-webkit-scrollbar-thumb {
-  height: 1.2vh;
-  border-radius: 1.2vh;
-  background-color: #d5ac68;
+  height: 1.5vh;
+  border-radius: 1.5vh;
+  background-color: inherit;
+  transition: all 1s;
 }
 
 .image-container::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
-  background-color: #f1db9d;
 }
 
 .image-container::-webkit-scrollbar:vertical {
@@ -172,7 +196,7 @@ body {
   object-fit: contain;
   z-index: 10;
   height: 100%;
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
 #gallery {
