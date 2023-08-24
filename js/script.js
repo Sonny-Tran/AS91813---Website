@@ -39,54 +39,13 @@ imgs.forEach((img) => {
   });
 });
 
-const gallery_scrollbar = document.querySelector(
-  "#imgcontainer::-webkit-scrollbar"
-);
-
-addEventListener("mouseover", function () {
-  setDirection(0);
-});
-
-const images = [
-  "maunga_club_cabin",
-  "mountain_view_1",
-  "kakapo/bunk_room",
-  "kakapo/cabin_exterior",
-  "kakapo/cabin_view",
-  "kakapo/hallway",
-  "kereru/adult_bedroom",
-  "kereru/cabin_exterior",
-  "kereru/kids_bedroom",
-  "kereru/kitchen",
-  "pukeko/adult_bedroom",
-  "pukeko/bathroom",
-  "pukeko/chalet_exterior",
-  "pukeko/chalet_view",
-];
-
 var image = document.getElementById("images");
-let i = 0;
-moving = false;
 
 function MoveSlides(n) {
-  i += n;
-  if (i >= images.length) {
-    i = 0;
-  }
-  if (i < 0) {
-    i = images.length - 1;
-  }
-  moving = true;
-
   image.classList.remove("prev-animation");
   image.classList.remove("next-animation");
   if (n < 0) {
-    setTimeout(() => {
-      image.classList.add("prev-animation");
-    }, 50);
-    setTimeout(() => {
-      image.classList.remove("prev-animation");
-    }, 1050);
+    galleryanimation(n);
   }
 
   if (n > 0) {
@@ -98,27 +57,6 @@ function MoveSlides(n) {
     }, 1050);
   }
 
-  image.src = "img/" + images[i] + ".jpg";
   image.classList.remove("show");
 }
-var isPaused = false;
 delay = 3000;
-
-function temppause() {
-  delay = 5000;
-}
-
-var interval;
-
-function f1() {
-  clearInterval(interval);
-  if (!moving) {
-    MoveSlides(1);
-  }
-
-  interval = setInterval(f1, delay);
-  delay = 3000;
-  moving = false;
-}
-
-f1();

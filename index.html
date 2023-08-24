@@ -38,7 +38,7 @@
           />
           <input
             type="button"
-            onclick="ScrollDown(gallery, -5)"
+            onclick="ScrollDown(Gallery, 5)"
             class="navigation_button"
             value="GALLERY"
           />
@@ -176,43 +176,12 @@
         <img src="img/pukeko/chalet_view.jpg" class="image2 fullscreen-img" />
       </div>
     </div>
-    <div id="gallery">
-      <h2>Gallery</h2>
-      <div id="imgcontainer">
-        <img
-          src="img/kakapo/bunk_room.jpg"
-          class="image fullscreen-img"
-          alt="Kakapo Bunk Room"
-        />
-        <img src="img/kakapo/cabin_exterior.jpg" class="image fullscreen-img" />
-        <img src="img/kakapo/cabin_view.jpg" class="image fullscreen-img" />
-        <img src="img/kakapo/hallway.jpg" class="image fullscreen-img" />
-        <img src="img/kereru/adult_bedroom.jpg" class="image fullscreen-img" />
-        <img src="img/kereru/cabin_exterior.jpg" class="image fullscreen-img" />
-        <img src="img/kereru/kids_bedroom.jpg" class="image fullscreen-img" />
-        <img src="img/kereru/kitchen.jpg" class="image fullscreen-img" />
-        <img src="img/pukeko/adult_bedroom.jpg" class="image fullscreen-img" />
-        <img src="img/pukeko/bathroom.jpg" class="image fullscreen-img" />
-        <img
-          src="img/pukeko/chalet_exterior.jpg"
-          class="image fullscreen-img"
-        />
-        <img src="img/pukeko/chalet_view.jpg" class="image fullscreen-img" />
-      </div>
-    </div>
-
     <div style="padding: 14vh 0" id="Gallery">
       <div class="carousel" style="background-color: rgba(255, 255, 255, 0.1)">
-        <button
-          class="carousel-button prev"
-          onclick="MoveSlides(-1); temppause()"
-        >
+        <button class="carousel-button prev" onclick="MoveSlides(-1);">
           &#60;
         </button>
-        <button
-          class="carousel-button next"
-          onclick="MoveSlides(1); temppause()"
-        >
+        <button class="carousel-button next" onclick="MoveSlides(1); ">
           &#62;
         </button>
         <img src="img/kakapo/bunk_room.jpg" id="images" class="images show" />

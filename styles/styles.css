@@ -217,63 +217,6 @@ body {
   cursor: zoom-in;
 }
 
-#gallery {
-  text-align: center;
-  margin-top: 15vh;
-}
-
-#gallery > h2 {
-  font-size: 5vh;
-  text-decoration: underline;
-  font-weight: bold;
-  color: black;
-}
-
-#imgcontainer {
-  padding-top: 5vh;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  content-visibility: auto;
-  overflow-x: scroll;
-}
-
-#imgcontainer::-webkit-scrollbar {
-  height: 1.5vh;
-  background-color: grey;
-}
-
-#imgcontainer::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
-}
-
-#imgcontainer::-webkit-scrollbar-thumb {
-  height: 1.5vh;
-  border-radius: 1vh;
-  background-color: inherit;
-  transition: all 1s;
-}
-
-#imgcontainer::-webkit-scrollbar-thumb:hover {
-  cursor: pointer;
-  background-color: #91c8e4;
-}
-
-#imgcontainer::-webkit-scrollbar:vertical {
-  display: none;
-}
-
-#imgcontainer > .image {
-  height: 75vh;
-  border: solid black 0.5vw;
-  object-fit: contain;
-  margin-left: 1vw;
-}
-
-#imgcontainer > .image:hover {
-  cursor: zoom-in;
-}
-
 #fullpage {
   display: none;
   position: fixed;
