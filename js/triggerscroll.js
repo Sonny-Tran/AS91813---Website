@@ -18,6 +18,19 @@ ScrollTrigger.create({
   },
 });
 
+function ScrollDown(element, margin) {
+  console.log(element);
+  dims = element.getBoundingClientRect();
+  marginPercent = (margin / 100) * window.innerHeight;
+  offset = window.pageYOffset + dims.top;
+
+  window.scrollTo({
+    top: offset + marginPercent,
+    behavior: "smooth",
+  });
+  console.log("ran2");
+}
+
 gsap.to(".about-us", {
   opacity: 0,
   scrollTrigger: {

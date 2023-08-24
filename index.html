@@ -32,13 +32,13 @@
         <nav>
           <input
             type="button"
-            onclick="window.location.href='#kakapo'"
+            onclick="ScrollDown(kakapo, -5)"
             class="navigation_button"
             value="COMPARE"
           />
           <input
             type="button"
-            onclick="window.location.href='#gallery'"
+            onclick="ScrollDown(gallery, -5)"
             class="navigation_button"
             value="GALLERY"
           />
@@ -159,6 +159,7 @@
           <li>Maximum Adults: 2</li>
           <li>Maximum Children: 4</li>
         </ul>
+        <div>Great option for a family</div>
       </div>
       <button class="img_expand">
         < <br />
@@ -204,13 +205,13 @@
       <div class="carousel" style="background-color: rgba(255, 255, 255, 0.1)">
         <button
           class="carousel-button prev"
-          onclick="MoveSlides(-1); slideshow_autostop()"
+          onclick="MoveSlides(-1); temppause()"
         >
           &#60;
         </button>
         <button
           class="carousel-button next"
-          onclick="MoveSlides(1); slideshow_autostop()"
+          onclick="MoveSlides(1); temppause()"
         >
           &#62;
         </button>
@@ -222,6 +223,7 @@
       id="fullpage"
       onclick="this.style.display='none'; setDirection(1); html.style.overflowY='scroll'"
     ></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/triggerscroll.js" defer></script>

@@ -48,21 +48,25 @@ addEventListener("mouseover", function () {
 });
 
 const images = [
-  "bridge1",
-  "bridge2",
-  "bridge3",
-  "bungee_general1",
-  "bungee_general2",
-  "canyon1",
-  "canyon2",
-  "canyon3",
-  "tower1",
-  "tower2",
-  "ultra-bungee-hero",
+  "maunga_club_cabin",
+  "mountain_view_1",
+  "kakapo/bunk_room",
+  "kakapo/cabin_exterior",
+  "kakapo/cabin_view",
+  "kakapo/hallway",
+  "kereru/adult_bedroom",
+  "kereru/cabin_exterior",
+  "kereru/kids_bedroom",
+  "kereru/kitchen",
+  "pukeko/adult_bedroom",
+  "pukeko/bathroom",
+  "pukeko/chalet_exterior",
+  "pukeko/chalet_view",
 ];
 
 var image = document.getElementById("images");
 let i = 0;
+moving = false;
 
 function MoveSlides(n) {
   i += n;
@@ -72,10 +76,10 @@ function MoveSlides(n) {
   if (i < 0) {
     i = images.length - 1;
   }
+  moving = true;
 
   image.classList.remove("prev-animation");
   image.classList.remove("next-animation");
-
   if (n < 0) {
     setTimeout(() => {
       image.classList.add("prev-animation");
@@ -94,22 +98,27 @@ function MoveSlides(n) {
     }, 1050);
   }
 
-  setTimeout(() => {
-    image.src = "img/" + images[i] + ".jpg";
-    image.classList.remove("show");
-  }, 375);
+  image.src = "img/" + images[i] + ".jpg";
+  image.classList.remove("show");
+}
+var isPaused = false;
+delay = 3000;
+
+function temppause() {
+  delay = 5000;
 }
 
-var auto = setInterval(() => {
-  MoveSlides(1);
-}, 2500);
+var interval;
 
-function slideshow_autostop() {
-  clearInterval(auto);
+function f1() {
+  clearInterval(interval);
+  if (!moving) {
+    MoveSlides(1);
+  }
 
-  setTimeout(() => {
-    setInterval(() => {
-      MoveSlides(1);
-    }, 2500);
-  }, 7500);
+  interval = setInterval(f1, delay);
+  delay = 3000;
+  moving = false;
 }
+
+f1();
