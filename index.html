@@ -38,15 +38,9 @@
           />
           <input
             type="button"
-            onclick="ScrollDown(Gallery, 5)"
+            onclick="ScrollDown(Gallery, -2)"
             class="navigation_button"
             value="GALLERY"
-          />
-          <input
-            type="button"
-            onclick="window.location.href='index.html'"
-            class="navigation_button"
-            value="PRICING"
           />
           <input
             type="button"
@@ -176,12 +170,15 @@
         <img src="img/pukeko/chalet_view.jpg" class="image2 fullscreen-img" />
       </div>
     </div>
-    <div style="padding: 14vh 0" id="Gallery">
+    <div style="margin: 10vh 0" id="Gallery">
+      <h2 style="text-align: center; font-size: 4rem; margin-bottom: 5vh">
+        Gallery
+      </h2>
       <div class="carousel" style="background-color: rgba(255, 255, 255, 0.1)">
-        <button class="carousel-button prev" onclick="MoveSlides(-1);">
+        <button class="carousel-button prev" onclick="galleryonclick(-1);">
           &#60;
         </button>
-        <button class="carousel-button next" onclick="MoveSlides(1); ">
+        <button class="carousel-button next" onclick="galleryonclick(1); ">
           &#62;
         </button>
         <img src="img/kakapo/bunk_room.jpg" id="images" class="images show" />

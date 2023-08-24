@@ -83,7 +83,6 @@ gsap.from("#pukeko", {
 
 var item = document.getElementById("images");
 let i = 0;
-
 const images = [
   "maunga_club_cabin",
   "mountain_view_1",
@@ -101,11 +100,29 @@ const images = [
   "pukeko/chalet_view",
 ];
 
-tl.play();
+function galleryanimation(imagesrc, x1) {
+  var tl = gsap.timeline();
+  tl.to(item, {
+    xPercent: x1,
+    opacity: 0,
+    ease: Power1.easeInOut,
+    duration: 0.4,
+  });
+  tl.to(item, {
+    xPercent: -x1,
+    duration: 0,
+  });
+  tl.set(item, { attr: { src: imagesrc } });
+  tl.to(item, {
+    xPercent: 0,
+    opacity: 1,
+    duration: 0.4,
+    ease: Power1.easeInOut,
+  });
+}
 
-function galleryanimation(n) {
+function galleryonclick(n) {
   i += n;
-
   if (i >= images.length) {
     i = 0;
   }
@@ -116,32 +133,43 @@ function galleryanimation(n) {
   var imagesrc = "img/" + images[i] + ".jpg";
   console.log(imagesrc);
 
-  var tl = gsap.timeline();
-  tl.to(item, {
-    xPercent: -60,
-    opacity: 0,
-    ease: Power1.easeInOut,
-    duration: 0.5,
-  });
-  tl.to(item, {
-    xPercent: 60,
-    duration: 0,
-  });
-  tl.set(item, { attr: { src: imagesrc } });
-  tl.to(item, {
-    xPercent: 0,
-    opacity: 1,
-    duration: 0.5,
-    ease: Power1.easeInOut,
-  });
+  var delay = 1000;
 
-  if (n < 0) {
-    tl.play();
-    console.log("ran");
+  if (n == 1) {
+    galleryanimation(imagesrc, -60);
   } else {
-    tl.reverse();
-    console.log("ran222");
+    galleryanimation(imagesrc, 60);
+  }
+  autoscroll(n, delay);
+}
+
+var auto = setInterval(() => {
+  autoscrollanimation(1);
+}, 2000);
+
+function autoscrollanimation() {
+  i += 1;
+  if (i >= images.length) {
+    i = 0;
+  }
+  if (i < 0) {
+    i = images.length - 1;
   }
 
-  image.classList.remove("show");
+  var imagesrc = "img/" + images[i] + ".jpg";
+  console.log(imagesrc);
+  console.log("sus");
+
+  galleryanimation(imagesrc, -60);
+
+  delay = 2000;
+  clearInterval(auto);
+  auto = setInterval(autoscrollanimation, delay);
+}
+
+function autoscroll(n, delay) {
+  clearInterval(auto);
+  console.log(n);
+  delay = 3000;
+  auto = setInterval(autoscrollanimation, delay);
 }

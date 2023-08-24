@@ -38,25 +38,3 @@ imgs.forEach((img) => {
     html.style.overflowY = "hidden"; // Prevents User from scrolling while image expanded
   });
 });
-
-var image = document.getElementById("images");
-
-function MoveSlides(n) {
-  image.classList.remove("prev-animation");
-  image.classList.remove("next-animation");
-  if (n < 0) {
-    galleryanimation(n);
-  }
-
-  if (n > 0) {
-    setTimeout(() => {
-      image.classList.add("next-animation");
-    }, 50);
-    setTimeout(() => {
-      image.classList.remove("next-animation");
-    }, 1050);
-  }
-
-  image.classList.remove("show");
-}
-delay = 3000;
