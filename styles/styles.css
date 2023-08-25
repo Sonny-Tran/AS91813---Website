@@ -1,3 +1,7 @@
+* {
+  font-family: "Sora", sans-serif;
+}
+
 ::-webkit-scrollbar {
   width: 0px; /* make scrollbar dimensions 0 for both horizonal and vertical */
   height: 0px;
@@ -37,11 +41,10 @@ body {
 #navbar {
   position: fixed;
   z-index: 100;
-  background-color: rgba(54, 156, 206, 0.2);
-  backdrop-filter: blur(0.5vw);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #0f0e17;
   width: 100%;
   left: 0;
   top: 0;
@@ -53,29 +56,30 @@ body {
 
 /* Button styling for the navbar */
 .navigation_button {
-  cursor: pointer;
-  background: rgb(248, 252, 253);
-  color: rgb(0, 0, 0);
+  color: #fffffe;
+  background-color: transparent;
   font-size: 1.5rem; /* Works based on default font size,so 1.5 times default font size */
   padding: 1vw;
+  font-size: 1vw;
   text-align: center;
   text-decoration: none;
-  border-radius: 0.5rem;
   margin: 1vw;
   opacity: 1;
-  box-shadow: 0px 0.25vh 0px #d3e9f4;
-  transition: box-shadow 0.25s, transform 0.25s, background-color 0.25s;
+  box-shadow: 0 0 0 transparent inset;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.1s;
 }
 
 /* Moves the navigation button upwards and increases the shadow's height, creating a 3d button effect */
 .navigation_button:hover {
-  transform: translateY(-0.25vh);
-  box-shadow: 0px 0.5vh 0px #d3e9f4;
+  cursor: pointer;
+  box-shadow: -10vw 0 0 #fffffe inset;
+  color: #0f0e17;
 }
 
 /* Moves the navigation button downwards when clicked and erases shadow, making it look like you pushed the button */
 .navigation_button:active {
-  transform: translateY(0.1vh);
+  transition: box-shadow 0s;
+  background-color: #ff8906;
   box-shadow: none;
 }
 
@@ -85,10 +89,8 @@ body {
   margin: auto;
   width: 50%;
   /* Creates a frosted glass effect */
-  background-color: rgba(145, 200, 228, 0.7);
-
-  box-shadow: inset 0 0 5vw rgba(255, 255, 255, 1);
-  backdrop-filter: blur(0.5vh);
+  background-color: rgba(255, 255, 254, 0.7);
+  backdrop-filter: blur(0.5vw);
   padding: 1vh 0vw;
 }
 
@@ -96,125 +98,6 @@ body {
 .about-us-para {
   margin-top: 2.5%;
   padding: 1vh 1vw;
-}
-
-/* text box styling, aligns text to the center, take up as much space as possible and rounded borders */
-
-.panel {
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  border: solid black 0.2vw;
-  background-color: transparent;
-  background-color: #f8fcfd;
-  width: 80vw;
-  height: 75vh;
-  margin: 10vh auto;
-  position: relative;
-  box-shadow: -0.25vw 0.25vw 0.5vw rgb(0, 0, 0, 0.25);
-}
-
-.text-box {
-  text-align: center;
-  padding: 2.5% 0 2.5% 5%;
-  width: 100%;
-  flex: 1;
-  border-radius: 5vh;
-  box-sizing: border-box;
-  transition: all 1s;
-}
-
-.text-box > h2 {
-  font-size: 2rem;
-  text-decoration: underline;
-}
-
-.text-box > ul {
-  font-size: 1.5rem;
-  text-align: left;
-}
-
-/* Creates spacing between each bullet point */
-
-.text-box > ul > li {
-  margin-top: 2.5%;
-}
-
-.image-container {
-  width: 0%;
-  position: relative;
-  display: flex;
-  background-color: black;
-  flex-direction: row;
-  overflow: auto;
-  object-fit: contain;
-  content-visibility: auto;
-  transition: all 1s;
-  background-color: #91c8e4;
-}
-
-.image-container:hover {
-  cursor: pointer;
-}
-
-.img_expand {
-  width: 1.5rem; /* Makes Arrows break line instead of expanding div*/
-  background-color: #91c8e4;
-  height: 100%;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 0 0.25rem;
-}
-
-.img_expand:hover {
-  cursor: pointer;
-}
-
-.text-box-hide {
-  transform: translateX(-10vw);
-  opacity: 0;
-  width: 0;
-  padding: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-.image-container-expand {
-  width: 100vw;
-  background-color: #f8fcfd;
-}
-
-.image-container::-webkit-scrollbar {
-  height: 1.5vh;
-  background-color: black;
-}
-
-.image-container::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
-}
-
-.image-container::-webkit-scrollbar-thumb {
-  height: 1.5vh;
-  border-radius: 1vh;
-  background-color: inherit;
-  transition: all 1s;
-}
-
-.image-container::-webkit-scrollbar-thumb:hover {
-  cursor: pointer;
-  background-color: #91c8e4;
-}
-
-.image-container::-webkit-scrollbar:vertical {
-  display: none;
-}
-
-.image2 {
-  object-fit: contain;
-  z-index: 10;
-  height: 100%;
-  cursor: zoom-in;
 }
 
 #fullpage {
@@ -230,8 +113,21 @@ body {
   background-position: center center;
   background-color: black;
   overflow: hidden;
+  animation: expandX 0.5s;
 }
 
 #fullpage:hover {
   cursor: zoom-out;
+}
+
+@keyframes expandX {
+  0% {
+    opacity: 0;
+    transform: scaleX(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(100%);
+  }
 }

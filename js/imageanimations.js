@@ -8,20 +8,26 @@ button.forEach((button) => {
   console.log("ran");
   console.log(expanded);
 
-  button.addEventListener("click", function (event) {
+  button.addEventListener("click", function () {
     if (expanded == false) {
       textbox.classList.add("text-box-hide");
       img_container.classList.add("image-container-expand");
       console.log("ran2");
       expanded = !expanded;
-      button.textContent = "> \n > \n >";
+      button.textContent = ">";
+      button.style.borderTopLeftRadius = "0";
+      button.style.borderBottomLeftRadius = "0";
+      button.style.height = "100%";
     } else {
       textbox.classList.remove("text-box-hide");
       img_container.classList.remove("image-container-expand");
 
       console.log("ran3");
       expanded = false;
-      button.textContent = "< \n < \n <";
+      button.textContent = "< ";
+      button.style.borderTopLeftRadius = "5vh";
+      button.style.borderBottomLeftRadius = "5vh";
+      button.style.height = "25%";
     }
   });
 });
@@ -31,10 +37,9 @@ const fullPage = document.querySelector("#fullpage");
 const html = document.querySelector("html");
 
 imgs.forEach((img) => {
-  img.addEventListener("click", function () {
-    setDirection(0);
+  img.addEventListener("click", (event) => {
     fullPage.style.backgroundImage = "url(" + img.src + ")";
     fullPage.style.display = "block";
-    html.style.overflowY = "hidden"; // Prevents User from scrolling while image expanded
+    html.style.overflowY = "hidden"; // Prevents User from scrolling while image expanded});
   });
 });

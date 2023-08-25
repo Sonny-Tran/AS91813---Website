@@ -3,19 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Embedded new times roman font so it can always be used on the website -->
-    <link
-      href="https://fonts.cdnfonts.com/css/roman-new-times"
-      rel="stylesheet"
-    />
     <link rel="icon" href="img/Maunga_Club_white.png" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
+    <link rel="stylesheet" href="styles/panel.css" />
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&display=swap"
+      1
+      rel="stylesheet"
+    />
 
     <title>Maunga Club - Main Page</title>
   </head>
   <body
-    style="background: #f9f9f9; font-family: 'roman-new-times'"
+    style="background: #0f0e17; font-family: 'roman-new-times'"
     class="body"
   >
     <div id="navbar">
@@ -28,14 +34,8 @@
           align-items: center;
         "
       >
-        <img src="img/Maunga_Club_white.png" style="height: 7vw" />
+        <img src="img/Maunga_Club_white.png" style="height: 4vw" />
         <nav>
-          <input
-            type="button"
-            onclick="ScrollDown(kakapo, -5)"
-            class="navigation_button"
-            value="COMPARE"
-          />
           <input
             type="button"
             onclick="ScrollDown(Gallery, -2)"
@@ -64,7 +64,7 @@
             rgba(0, 0, 0, 0.25),
             rgba(0, 0, 0, 0.25)
           ),
-          url(img/mountain_view_1.jpg);
+          url(img/maunga_club_cabin.jpg);
         justify-content: center;
       "
     >
@@ -88,19 +88,16 @@
     <div id="kakapo" class="panel">
       <div class="text-box">
         <h2>Kakapo</h2>
-        <ul style="list-style-type: disc">
-          <li>Largest of the chalets</li>
-          <li>large kitchen, dining and living area</li>
-          <li>Great amenities</li>
-          <li>Maximum Adults: 10</li>
-          <li>Maximum Children: 30</li>
-        </ul>
+        <div class="panel-grid">
+          <div class="content-box">Adult</div>
+          <div class="content-box">Child</div>
+          <div class="content-box">Good Points</div>
+          <div class="content-box">Amendities</div>
+        </div>
       </div>
-      <button class="img_expand">
-        < <br />
-        < <br />
-        <
-      </button>
+      <div style="display: flex; align-items: center">
+        <button class="img_expand"><</button>
+      </div>
       <div class="image-container">
         <img
           src="img/kakapo/bunk_room.jpg"
@@ -127,11 +124,9 @@
           <li>Maximum Children: 15</li>
         </ul>
       </div>
-      <button class="img_expand">
-        < <br />
-        < <br />
-        <
-      </button>
+      <div style="display: flex; align-items: center">
+        <button class="img_expand"><</button>
+      </div>
       <div class="image-container">
         <img src="img/kereru/adult_bedroom.jpg" class="image2 fullscreen-img" />
         <img
@@ -155,11 +150,9 @@
         </ul>
         <div>Great option for a family</div>
       </div>
-      <button class="img_expand">
-        < <br />
-        < <br />
-        <
-      </button>
+      <div style="display: flex; align-items: center">
+        <button class="img_expand"><</button>
+      </div>
       <div class="image-container">
         <img src="img/pukeko/adult_bedroom.jpg" class="image2 fullscreen-img" />
         <img src="img/pukeko/bathroom.jpg" class="image2 fullscreen-img" />
@@ -171,7 +164,14 @@
       </div>
     </div>
     <div style="margin: 10vh 0" id="Gallery">
-      <h2 style="text-align: center; font-size: 4rem; margin-bottom: 5vh">
+      <h2
+        style="
+          text-align: center;
+          font-size: 4rem;
+          margin-bottom: 5vh;
+          color: #fffffe;
+        "
+      >
         Gallery
       </h2>
       <div class="carousel" style="background-color: rgba(255, 255, 255, 0.1)">
@@ -187,12 +187,12 @@
 
     <div
       id="fullpage"
-      onclick="this.style.display='none'; setDirection(1); html.style.overflowY='scroll'"
+      onclick="this.style.display='none'; html.style.overflowY='scroll'"
     ></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/triggerscroll.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/imageanimations.js" defer></script>
   </body>
 </html>

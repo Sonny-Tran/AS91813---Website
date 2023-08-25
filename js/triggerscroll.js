@@ -2,6 +2,8 @@ gsap.registerPlugin(ScrollTrigger);
 viewPortWidth = window.innerWidth + "px";
 viewPortHeight = window.innerHeight + "px";
 
+window.scrollTo(0, 0);
+
 const showAnim = gsap
   .from("#navbar", {
     yPercent: -100,
@@ -133,19 +135,17 @@ function galleryonclick(n) {
   var imagesrc = "img/" + images[i] + ".jpg";
   console.log(imagesrc);
 
-  var delay = 1000;
-
   if (n == 1) {
     galleryanimation(imagesrc, -60);
   } else {
     galleryanimation(imagesrc, 60);
   }
-  autoscroll(n, delay);
+  autoscroll(n);
 }
 
 var auto = setInterval(() => {
-  autoscrollanimation(1);
-}, 2000);
+  autoscrollanimation();
+}, 2500);
 
 function autoscrollanimation() {
   i += 1;
@@ -162,14 +162,14 @@ function autoscrollanimation() {
 
   galleryanimation(imagesrc, -60);
 
-  delay = 2000;
+  delay = 2500;
   clearInterval(auto);
   auto = setInterval(autoscrollanimation, delay);
 }
 
-function autoscroll(n, delay) {
+function autoscroll(n) {
   clearInterval(auto);
   console.log(n);
-  delay = 3000;
+  delay = 6000;
   auto = setInterval(autoscrollanimation, delay);
 }
