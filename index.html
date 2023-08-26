@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/Maunga_Club_white.png" />
+    <!-- Makes websites appear as intended in other browsers-->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css" />
+    <!-- Stylesheets for the website-->
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/panel.css" />
+    <link rel="stylesheet" href="styles/login_form.css" />
 
-    <!-- Fonts -->
-
+    <!-- Embedded Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,6 +27,7 @@
     style="background: #0f0e17; font-family: 'roman-new-times'"
     class="body"
   >
+    <!-- Navigation Bar-->
     <div id="navbar">
       <div
         style="
@@ -34,30 +38,28 @@
           align-items: center;
         "
       >
+        <!-- Logo Image-->
         <img src="img/Maunga_Club_white.png" style="height: 4vw" />
+
+        <!-- Navigation Buttons -->
         <nav>
-          <input
-            type="button"
-            onclick="ScrollDown(Gallery, -2)"
+          <a onclick="ScrollDown(Gallery, -2)" class="navigation_button"
+            >Gallery</a
+          >
+          <a onclick="ScrollDown(Gallery, -2)" class="navigation_button"
+            >Register</a
+          >
+          <a
+            onclick="document.getElementById('login_modal').style.display='block'"
             class="navigation_button"
-            value="GALLERY"
-          />
-          <input
-            type="button"
-            onclick="window.location.href='index.html'"
-            class="navigation_button"
-            value="REGISTER"
-          />
-          <input
-            type="button"
-            onclick="window.location.href='index.html'"
-            class="navigation_button"
-            value="LOGIN"
-          />
+            >Login</a
+          >
         </nav>
       </div>
     </div>
-    <div
+
+    <!-- About us section with hero image-->
+    <section
       class="parallax"
       style="
         background-image: linear-gradient(
@@ -69,9 +71,9 @@
       "
     >
       <div class="about-us">
-        <h1 style="font-size: 3rem; font-weight: bold">About Us</h1>
+        <h1 style="font-size: 2.5vw; font-weight: bold">About Us</h1>
         <div class="about-us-para">
-          <p style="font-size: 1.5rem">
+          <p style="font-size: 1vw">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
             mattis rhoncus urna neque viverra. Suspendisse in est ante in. Vel
@@ -84,15 +86,48 @@
           </p>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Panels with chalet infomation-->
+    <!-- loading lazy means the browser will only render the image when in view-->
     <div id="kakapo" class="panel">
       <div class="text-box">
         <h2>Kakapo</h2>
+
+        <!-- Grid Div to split content into rows and columns-->
         <div class="panel-grid">
-          <div class="content-box">Adult</div>
-          <div class="content-box">Child</div>
-          <div class="content-box">Good Points</div>
-          <div class="content-box">Amendities</div>
+          <!-- Max num of adults-->
+          <div class="content-box">
+            <img
+              src="img/icons/person-solid.svg"
+              alt="My Happy SVG"
+              loading="lazy"
+              style="height: 4vh; margin-right: 1vw"
+            />
+            Maximum No. Adult : 15
+          </div>
+
+          <!-- Max num of Children-->
+          <div class="content-box">
+            <div class="img-icon">
+              <img
+                src="img/icons/child-solid.svg"
+                alt="My Happy SVG"
+                loading="lazy"
+                style="height: 3vh; margin-right: 1vw"
+              />
+            </div>
+            Maximum No. Children : 30
+          </div>
+
+          <!-- Notable features / Good points-->
+          <div class="content-box-2">
+            <ul style="list-style: disc">
+              <li>Largest of the chalets</li>
+              <li>Large kitchen, dining and living area</li>
+              <li>Great amenities</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div style="display: flex; align-items: center">
@@ -103,71 +138,148 @@
           src="img/kakapo/bunk_room.jpg"
           class="image2 fullscreen-img"
           alt="Kakapo Bunk Room"
+          loading="lazy"
         />
         <img
           src="img/kakapo/cabin_exterior.jpg"
           class="image2 fullscreen-img"
+          loading="lazy"
         />
-        <img src="img/kakapo/cabin_view.jpg" class="image2 fullscreen-img" />
-        <img src="img/kakapo/hallway.jpg" class="image2 fullscreen-img" />
+        <img
+          src="img/kakapo/cabin_view.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
+        <img
+          src="img/kakapo/hallway.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
       </div>
     </div>
     <div id="kereru" class="panel">
       <div class="text-box">
         <h2>Kereru</h2>
-        <ul style="list-style-type: disc">
-          <li>
-            Great for large groups/families wanting a chalet to themselves
-          </li>
-          <li>Limits on adult/child number ensure comfortable stay</li>
-          <li>Maximum Adults: 6</li>
-          <li>Maximum Children: 15</li>
-        </ul>
+        <div class="panel-grid">
+          <div class="content-box">
+            <img
+              src="img/icons/person-solid.svg"
+              alt="My Happy SVG"
+              loading="lazy"
+              style="height: 4vh; margin-right: 1vw"
+            />
+            Maximum No. Adult : 6
+          </div>
+          <div class="content-box">
+            <div class="img-icon">
+              <img
+                src="img/icons/child-solid.svg"
+                alt="My Happy SVG"
+                loading="lazy"
+                style="height: 3vh; margin-right: 1vw"
+              />
+            </div>
+            Maximum No. Children : 15
+          </div>
+          <div class="content-box-2">
+            <ul style="list-style: disc">
+              <li>
+                Great for large groups/families wanting a chalet to themselves
+              </li>
+              <li>Limits on adult/child number ensure comfortable stay</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div style="display: flex; align-items: center">
         <button class="img_expand"><</button>
       </div>
       <div class="image-container">
-        <img src="img/kereru/adult_bedroom.jpg" class="image2 fullscreen-img" />
+        <img
+          src="img/kereru/adult_bedroom.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
         <img
           src="img/kereru/cabin_exterior.jpg"
           class="image2 fullscreen-img"
         />
-        <img src="img/kereru/kids_bedroom.jpg" class="image2 fullscreen-img" />
-        <img src="img/kereru/kitchen.jpg" class="image2 fullscreen-img" />
+        <img
+          src="img/kereru/kids_bedroom.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
+        <img
+          src="img/kereru/kitchen.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
       </div>
     </div>
     <div id="pukeko" class="panel">
       <div class="text-box">
         <h2>Pukeko</h2>
-        <ul style="list-style-type: disc">
-          <li>Great option for a family</li>
-          <li>2 bedrooms</li>
-          <li>Perfect for families with 2-4 children</li>
-          <li>Separate living area</li>
-          <li>Maximum Adults: 2</li>
-          <li>Maximum Children: 4</li>
-        </ul>
-        <div>Great option for a family</div>
+        <div class="panel-grid">
+          <div class="content-box">
+            <img
+              src="img/icons/person-solid.svg"
+              alt="My Happy SVG"
+              loading="lazy"
+              style="height: 4vh; margin-right: 1vw"
+            />
+            Maximum No. Adult : 2
+          </div>
+          <div class="content-box">
+            <div class="img-icon">
+              <img
+                src="img/icons/child-solid.svg"
+                alt="My Happy SVG"
+                loading="lazy"
+                style="height: 3vh; margin-right: 1vw"
+              />
+            </div>
+            Maximum No. Children : 4
+          </div>
+          <div class="content-box-2">
+            <ul style="list-style: disc">
+              <li>Great option for a family</li>
+              <li>2 bedrooms</li>
+              <li>Perfect for families with 2-4 children</li>
+              <li>Separate living area</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div style="display: flex; align-items: center">
         <button class="img_expand"><</button>
       </div>
       <div class="image-container">
-        <img src="img/pukeko/adult_bedroom.jpg" class="image2 fullscreen-img" />
-        <img src="img/pukeko/bathroom.jpg" class="image2 fullscreen-img" />
+        <img
+          src="img/pukeko/adult_bedroom.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
+        <img
+          src="img/pukeko/bathroom.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
         <img
           src="img/pukeko/chalet_exterior.jpg"
           class="image2 fullscreen-img"
         />
-        <img src="img/pukeko/chalet_view.jpg" class="image2 fullscreen-img" />
+        <img
+          src="img/pukeko/chalet_view.jpg"
+          class="image2 fullscreen-img"
+          loading="lazy"
+        />
       </div>
     </div>
     <div style="margin: 10vh 0" id="Gallery">
       <h2
         style="
           text-align: center;
-          font-size: 4rem;
+          font-size: 3.5vw;
           margin-bottom: 5vh;
           color: #fffffe;
         "
@@ -181,7 +293,12 @@
         <button class="carousel-button next" onclick="galleryonclick(1); ">
           &#62;
         </button>
-        <img src="img/kakapo/bunk_room.jpg" id="images" class="images show" />
+        <img
+          src="img/kakapo/bunk_room.jpg"
+          id="images"
+          class="images fullscreen-img"
+          loading="lazy"
+        />
       </div>
     </div>
 
@@ -190,9 +307,53 @@
       onclick="this.style.display='none'; html.style.overflowY='scroll'"
     ></div>
 
+    <!-- The Modal -->
+    <div id="login_modal">
+      <!-- Modal Content -->
+      <form class="modal-content animate" action="/login_info.php">
+        <div class="container">
+          <label for="email"><b>Username</b></label>
+          <input
+            type="text"
+            placeholder="Enter Your Email"
+            name="email"
+            class="input_box"
+            required
+          />
+
+          <label for="password"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            class="input_box"
+            required
+          />
+
+          <!-- poi stand for proof of identity-->
+          <label for="poi"><b>Proof of Identity: </b></label>
+          <input type="file" name="poi" class="input_box" required />
+
+          <button type="submit" class="submit">Login</button>
+        </div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('login_modal').style.display='none'"
+            class="cancelbtn"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/triggerscroll.js" defer></script>
     <script src="js/imageanimations.js" defer></script>
+    <script src="js/slideshowanimations.js" defer></script>
+    <script src="js/login_page.js" defer></script>
   </body>
 </html>

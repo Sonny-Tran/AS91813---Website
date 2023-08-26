@@ -40,7 +40,7 @@ body {
 
 #navbar {
   position: fixed;
-  z-index: 100;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,7 +59,7 @@ body {
   color: #fffffe;
   background-color: transparent;
   font-size: 1.5rem; /* Works based on default font size,so 1.5 times default font size */
-  padding: 1vw;
+  padding: 1vh 1vw;
   font-size: 1vw;
   text-align: center;
   text-decoration: none;
@@ -105,13 +105,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 101;
+  z-index: 3;
   width: 100vw;
   height: 100vh;
   background-size: contain;
   background-repeat: no-repeat no-repeat;
   background-position: center center;
-  background-color: black;
+  background-color: #0f0e17;
   overflow: hidden;
   animation: expandX 0.5s;
 }
@@ -130,4 +130,10 @@ body {
     opacity: 1;
     transform: scaleX(100%);
   }
+}
+
+.footer {
+  color: #fffffe;
+  padding: 5vh 5vw;
+  font-size: 1vw;
 }
