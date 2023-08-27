@@ -1,0 +1,17 @@
+#booking_page {
+  background-color: #fffffe;
+  margin: auto;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 1vw;
+  padding: 4vh 3vw;
+}
+
+.input_box {
+  width: 100%;
+  padding: 0.8vh 0.8vw;
+  margin: 0.5vh 0 2vh 0;
+  display: inline-block;
+  border: 0.1vw solid #a7a9be;
+  box-sizing: border-box;
+}

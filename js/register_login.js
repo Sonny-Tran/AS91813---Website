@@ -27,6 +27,18 @@ function addData() {
   )
     return false;
 
+  /* Testing Purposes
+    if (
+      !email ||
+      !password ||
+      !fullname ||
+      !address ||
+      !poi ||
+      !poa
+    )
+      return false;
+    */
+
   if (old_data == null) {
     old_data = [];
     old_data.push(obj);
@@ -38,12 +50,13 @@ function addData() {
       if (old_data[i].email == obj.email) {
         return alert("This email is taken");
       } else {
-        console.log("completed");
-        registercomplete();
-        old_data.push(obj);
-        localStorage.setItem("login_data", JSON.stringify(old_data));
+        continue;
       }
     }
+    console.log("completed");
+    registercomplete();
+    old_data.push(obj);
+    localStorage.setItem("login_data", JSON.stringify(old_data));
   }
 }
 

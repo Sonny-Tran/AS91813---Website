@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/panel.css" />
     <link rel="stylesheet" href="styles/modal_form.css" />
+    <link rel="stylesheet" href="styles/booking_page.css" />
 
     <!-- Embedded Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -316,6 +317,9 @@
         class="modal-content animate"
         autocomplete="off"
         onsubmit="return false"
+        action="mailto:maungaclub@maungaclub.maungaclub"
+        method="post"
+        enctype="text/plain"
       >
         <div class="container">
           <label for="fullname"><b>Fullname</b></label>
@@ -461,7 +465,13 @@
       </form>
     </div>
 
-    <div id="booking_page">Test For Now</div>
+    <div id="booking_page">
+      <select list="browsers" name="browser" class="input_box">
+        <option>Kakapo</option>
+        <option>Kereru</option>
+        <option>Pukeko</option>
+      </select>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
