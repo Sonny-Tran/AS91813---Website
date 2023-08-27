@@ -17,7 +17,6 @@ function addData() {
     poa: POA,
   };
 
-  /*
   if (
     !email ||
     !password ||
@@ -26,10 +25,6 @@ function addData() {
     poi.files.length == 0 ||
     poa.files.length == 0
   )
-    return alert("Please Fill Out all the fields");
-  */
-
-  if (!email || !password || !fullname || !address || !poi || !poa)
     return alert("Please Fill Out all the fields");
 
   if (old_data == null) {
