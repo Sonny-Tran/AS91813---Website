@@ -14,6 +14,7 @@
   padding: 1vh 1vw;
   background-color: #f25f4c;
   cursor: pointer;
+  border: solid 0.1vw #0f0e17;
 }
 
 /* Add padding to containers */
@@ -33,7 +34,7 @@
 }
 
 /* The Modal (background) */
-#login_modal {
+.modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 3; /* Sit on top */
@@ -50,21 +51,24 @@
 /* Modal Content/Box */
 .modal-content {
   background-color: #fffffe;
-  margin: 25vh auto; /* 15% from the top and centered */
+  margin: 15vh auto; /* 15% from the top and centered */
   border: 0.1vw solid #ff8906;
   width: 50%; /* Could be more or less, depending on screen size */
 }
 
 .submit {
+  cursor: pointer;
   color: #fffffe;
-  margin-top: 1vh;
+  margin-left: 1vw;
   background-color: #0f0e17;
-  border: none;
-  padding: 0.5vh 0.5vw;
+  border: solid 0.1vw #0f0e17;
+  padding: 1vh 1vw;
+  transition: all 0.1s;
 }
 
-.submit:hover {
-  cursor: pointer;
+.submit:active {
+  background-color: #fffffe;
+  color: #0f0e17;
 }
 
 /* Add Zoom Animation */

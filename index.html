@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/panel.css" />
-    <link rel="stylesheet" href="styles/login_form.css" />
+    <link rel="stylesheet" href="styles/register_form.css" />
 
     <!-- Embedded Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,9 @@
           <a onclick="ScrollDown(Gallery, -2)" class="navigation_button"
             >Gallery</a
           >
-          <a onclick="ScrollDown(Gallery, -2)" class="navigation_button"
+          <a
+            onclick="document.getElementById('register_modal').style.display='block'"
+            class="navigation_button"
             >Register</a
           >
           <a
@@ -308,24 +310,46 @@
     ></div>
 
     <!-- The Modal -->
-    <div id="login_modal">
+    <div id="register_modal" class="modal">
       <!-- Modal Content -->
-      <form class="modal-content animate" action="/login_info.php">
+      <form
+        class="modal-content animate"
+        autocomplete="off"
+        onsubmit="return false"
+      >
         <div class="container">
+          <label for="fullname"><b>Password</b></label>
+          <input
+            id="fullname"
+            type="password"
+            placeholder="Enter Password"
+            class="input_box"
+            required
+          />
+
           <label for="email"><b>Username</b></label>
           <input
+            id="email"
             type="text"
             placeholder="Enter Your Email"
-            name="email"
             class="input_box"
             required
           />
 
           <label for="password"><b>Password</b></label>
           <input
+            id="password"
             type="password"
             placeholder="Enter Password"
-            name="password"
+            class="input_box"
+            required
+          />
+
+          <label for="address"><b>Password</b></label>
+          <input
+            id="address"
+            type="text"
+            placeholder="Enter Password"
             class="input_box"
             required
           />
@@ -334,16 +358,97 @@
           <label for="poi"><b>Proof of Identity: </b></label>
           <input type="file" name="poi" class="input_box" required />
 
-          <button type="submit" class="submit">Login</button>
+          <label for="poa"><b>Proof of Address: </b></label>
+          <input type="file" name="poa" class="input_box" required />
         </div>
 
-        <div class="container" style="background-color: #f1f1f1">
+        <div
+          class="container"
+          style="background-color: #f1f1f1; padding-top: 0"
+        >
           <button
             type="button"
-            onclick="document.getElementById('login_modal').style.display='none'"
+            onclick="document.getElementById('register_modal').style.display='none'"
             class="cancelbtn"
           >
             Cancel
+          </button>
+
+          <button
+            type="submit"
+            name="submit"
+            class="submit"
+            onclick="addData()"
+          >
+            Register
+          </button>
+
+          <button
+            type="button"
+            class="submit"
+            onclick="document.getElementById('login_modal').style.display='block'; document.getElementById('register_modal').style.display='none'"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- The Modal -->
+    <div id="login_modal" class="modal">
+      <!-- Modal Content -->
+      <form
+        class="modal-content animate"
+        autocomplete="off"
+        onsubmit="return false"
+      >
+        <div class="container">
+          <label for="email"><b>Username</b></label>
+          <input
+            id="email"
+            type="text"
+            placeholder="Enter Your Email"
+            class="input_box"
+            required
+          />
+
+          <label for="password"><b>Password</b></label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter Password"
+            class="input_box"
+            required
+          />
+        </div>
+
+        <div
+          class="container"
+          style="background-color: #f1f1f1; padding-top: 0"
+        >
+          <button
+            type="button"
+            onclick="document.getElementById('register_modal').style.display='none'"
+            class="cancelbtn"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            name="submit"
+            class="submit"
+            onclick="addData()"
+          >
+            Login
+          </button>
+
+          <button
+            type="button"
+            class="submit"
+            onclick="document.getElementById('login_modal').style.display='none'; document.getElementById('register_modal').style.display='block'"
+          >
+            Register
           </button>
         </div>
       </form>
@@ -354,6 +459,6 @@
     <script src="js/triggerscroll.js" defer></script>
     <script src="js/imageanimations.js" defer></script>
     <script src="js/slideshowanimations.js" defer></script>
-    <script src="js/login_page.js" defer></script>
+    <script src="js/register.js" defer></script>
   </body>
 </html>

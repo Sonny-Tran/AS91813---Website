@@ -50,7 +50,6 @@ function galleryonclick(n) {
   }
 
   var imagesrc = "img/" + images[i] + ".jpg";
-  console.log(imagesrc);
 
   if (n == 1) {
     galleryanimation(imagesrc, -60);
@@ -74,8 +73,6 @@ function autoscrollanimation() {
   }
 
   var imagesrc = "img/" + images[i] + ".jpg";
-  console.log(imagesrc);
-  console.log("sus");
 
   galleryanimation(imagesrc, -60);
 
@@ -86,7 +83,6 @@ function autoscrollanimation() {
 
 function autoscroll(n) {
   clearInterval(auto);
-  console.log(n);
   delay = 6000;
   auto = setInterval(autoscrollanimation, delay);
 }
