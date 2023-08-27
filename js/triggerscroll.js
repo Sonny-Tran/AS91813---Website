@@ -43,7 +43,6 @@ gsap.to(".about-us", {
     trigger: ".about-us",
     start: "-25% 0%",
     end: "-20% 0%",
-    markers: true,
     toggleActions: "play none reverse none",
   },
 });
@@ -56,7 +55,6 @@ gsap.from("#kakapo", {
   scrollTrigger: {
     trigger: "#kakapo",
     start: "110% 100%",
-    markers: true,
     once: true,
   },
 });
@@ -69,7 +67,6 @@ gsap.from("#kereru", {
   scrollTrigger: {
     trigger: "#kereru",
     start: "110% 100%",
-    markers: true,
     once: true,
   },
 });
@@ -82,7 +79,6 @@ gsap.from("#pukeko", {
   scrollTrigger: {
     trigger: "#pukeko",
     start: "110% 100%",
-    markers: true,
     once: true,
   },
 });
