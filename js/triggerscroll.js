@@ -2,8 +2,9 @@ gsap.registerPlugin(ScrollTrigger);
 viewPortWidth = window.innerWidth + "px";
 viewPortHeight = window.innerHeight + "px";
 
-window.onbeforeunload = function () {
+window.onload = function () {
   window.scrollTo(0, 0);
+  html.style.overflowY = "scroll";
 };
 
 const showAnim = gsap

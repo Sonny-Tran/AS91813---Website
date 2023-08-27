@@ -66,16 +66,22 @@ function login() {
   if (old_data == null) {
     return alert("There are currently no users registered");
   } else {
-    correct_details =
-      old_data.email === obj.email && user.userPassword === obj.password;
+    for (let i = 0; i < old_data.length; i++) {
+      if (
+        old_data[i].email == obj.email &&
+        old_data[i].password == obj.password
+      )
+        correct_details = true;
+      else correct_details = false;
+    }
 
-    if (!correct_details) {
-      return alert("Incorrect Email or Password");
-    } else {
+    if (correct_details) {
       document.getElementById("booking_page").style.display = "flex";
       document.getElementById("login_modal").style.display = "none";
       ScrollDown(booking_page, -2);
       return alert("Login Successfully");
+    } else {
+      return alert("Incorrect Email or Password");
     }
   }
 }

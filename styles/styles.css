@@ -23,7 +23,6 @@ html,
 body {
   overflow-y: scroll; /* overflow is to keep the function of scrolling while hiding the scrollbar */
   overflow-x: hidden; /* stop users from scrolling horizonally */
-  overscroll-behavior: none; /* Prevents mobile users from pushing outside of the website's boundary */
   scroll-behavior: smooth; /* Creates smooth scrolling effect when clicking button */
   opacity: 1;
 }
