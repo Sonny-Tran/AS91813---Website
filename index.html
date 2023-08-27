@@ -18,7 +18,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&display=swap"
-      1
       rel="stylesheet"
     />
 
@@ -38,23 +37,30 @@
           width: 100%;
           align-items: center;
         "
+        id="spacer"
       >
         <!-- Logo Image-->
-        <img src="img/Maunga_Club_white.png" style="height: 4vw" />
+        <img
+          src="img/Maunga_Club_white.png"
+          style="height: 4vw"
+          alt="Maunga Club logo"
+        />
 
         <!-- Navigation Buttons -->
-        <nav>
+        <nav id="navigation_button_bar">
           <a onclick="ScrollDown(Gallery, -2)" class="navigation_button"
             >Gallery</a
           >
           <a
             onclick="document.getElementById('register_modal').style.display='block'"
             class="navigation_button"
+            id="registration_button"
             >Register</a
           >
           <a
             onclick="document.getElementById('login_modal').style.display='block'"
             class="navigation_button"
+            id="login_button"
             >Login</a
           >
         </nav>
@@ -93,6 +99,7 @@
 
     <!-- Panels with chalet infomation-->
     <!-- loading lazy means the browser will only render the image when in view-->
+    <!-- SVG All icons are from https://www.freepik.com/-->
     <div id="kakapo" class="panel">
       <div class="text-box">
         <h2>Kakapo</h2>
@@ -103,7 +110,7 @@
           <div class="content-box">
             <img
               src="img/icons/person-solid.svg"
-              alt="My Happy SVG"
+              alt="Person Icon"
               loading="lazy"
               style="height: 4vh; margin-right: 1vw"
             />
@@ -115,7 +122,7 @@
             <div class="img-icon">
               <img
                 src="img/icons/child-solid.svg"
-                alt="My Happy SVG"
+                alt="Child Icon"
                 loading="lazy"
                 style="height: 3vh; margin-right: 1vw"
               />
@@ -134,7 +141,7 @@
         </div>
       </div>
       <div style="display: flex; align-items: center">
-        <button class="img_expand"><</button>
+        <button class="img_expand">&lt;</button>
       </div>
       <div class="image-container">
         <img
@@ -146,16 +153,19 @@
         <img
           src="img/kakapo/cabin_exterior.jpg"
           class="image2 fullscreen-img"
+          alt="Kakapo Exterior of cabin"
           loading="lazy"
         />
         <img
           src="img/kakapo/cabin_view.jpg"
           class="image2 fullscreen-img"
+          alt="Kakapo Cabin View"
           loading="lazy"
         />
         <img
           src="img/kakapo/hallway.jpg"
           class="image2 fullscreen-img"
+          alt="Kakapo Hallway"
           loading="lazy"
         />
       </div>
@@ -167,7 +177,7 @@
           <div class="content-box">
             <img
               src="img/icons/person-solid.svg"
-              alt="My Happy SVG"
+              alt="Adult Icon"
               loading="lazy"
               style="height: 4vh; margin-right: 1vw"
             />
@@ -177,7 +187,7 @@
             <div class="img-icon">
               <img
                 src="img/icons/child-solid.svg"
-                alt="My Happy SVG"
+                alt="Child Icon"
                 loading="lazy"
                 style="height: 3vh; margin-right: 1vw"
               />
@@ -195,26 +205,31 @@
         </div>
       </div>
       <div style="display: flex; align-items: center">
-        <button class="img_expand"><</button>
+        <button class="img_expand">&lt;</button>
       </div>
       <div class="image-container">
         <img
           src="img/kereru/adult_bedroom.jpg"
           class="image2 fullscreen-img"
+          alt="Kereru Adult Bedroom"
           loading="lazy"
         />
         <img
           src="img/kereru/cabin_exterior.jpg"
           class="image2 fullscreen-img"
+          alt="Kereru Exterior Cabin"
+          loading="lazy"
         />
         <img
           src="img/kereru/kids_bedroom.jpg"
           class="image2 fullscreen-img"
+          alt="Kereru Kids Bedroom"
           loading="lazy"
         />
         <img
           src="img/kereru/kitchen.jpg"
           class="image2 fullscreen-img"
+          alt="Kereru Kitchen"
           loading="lazy"
         />
       </div>
@@ -226,7 +241,7 @@
           <div class="content-box">
             <img
               src="img/icons/person-solid.svg"
-              alt="My Happy SVG"
+              alt="Person Icon"
               loading="lazy"
               style="height: 4vh; margin-right: 1vw"
             />
@@ -236,7 +251,7 @@
             <div class="img-icon">
               <img
                 src="img/icons/child-solid.svg"
-                alt="My Happy SVG"
+                alt="Child Icon"
                 loading="lazy"
                 style="height: 3vh; margin-right: 1vw"
               />
@@ -254,26 +269,31 @@
         </div>
       </div>
       <div style="display: flex; align-items: center">
-        <button class="img_expand"><</button>
+        <button class="img_expand">&lt;</button>
       </div>
       <div class="image-container">
         <img
           src="img/pukeko/adult_bedroom.jpg"
           class="image2 fullscreen-img"
+          alt="Pukeko Adult Bedroom"
           loading="lazy"
         />
         <img
           src="img/pukeko/bathroom.jpg"
           class="image2 fullscreen-img"
+          alt="Pukeko Bathroom"
           loading="lazy"
         />
         <img
           src="img/pukeko/chalet_exterior.jpg"
           class="image2 fullscreen-img"
+          alt="Pukeko Chalet Exterior"
+          loading="lazy"
         />
         <img
           src="img/pukeko/chalet_view.jpg"
           class="image2 fullscreen-img"
+          alt="Pukeko Chalet View"
           loading="lazy"
         />
       </div>
@@ -299,6 +319,7 @@
         <img
           src="img/kakapo/bunk_room.jpg"
           id="images"
+          alt="Gallery Image"
           class="images fullscreen-img"
           loading="lazy"
         />
@@ -315,7 +336,7 @@
       <!-- Modal Content -->
       <form
         class="modal-content animate"
-        autocomplete="off"
+        autocomplete="on"
         onsubmit="return false"
         action="mailto:maungaclub@maungaclub.maungaclub"
         method="post"
@@ -380,7 +401,7 @@
 
         <div
           class="container"
-          style="background-color: #f1f1f1; padding-top: 0"
+          style="background-color: #f1f1f1; padding-top: 0.5vw"
         >
           <button
             type="button"
@@ -401,7 +422,7 @@
 
           <button
             type="button"
-            class="submit"
+            class="submit login_switch"
             onclick="document.getElementById('login_modal').style.display='block'; document.getElementById('register_modal').style.display='none'"
           >
             Login
@@ -415,7 +436,7 @@
       <!-- Modal Content -->
       <form
         class="modal-content animate"
-        autocomplete="off"
+        autocomplete="on"
         onsubmit="return false"
       >
         <div class="container">
@@ -440,7 +461,7 @@
 
         <div
           class="container"
-          style="background-color: #f1f1f1; padding-top: 0"
+          style="background-color: #f1f1f1; padding-top: 0.5vw"
         >
           <button
             type="button"
@@ -456,7 +477,7 @@
 
           <button
             type="button"
-            class="submit"
+            class="submit login_switch"
             onclick="document.getElementById('login_modal').style.display='none'; document.getElementById('register_modal').style.display='block'"
           >
             Register
@@ -466,11 +487,30 @@
     </div>
 
     <div id="booking_page">
-      <select list="browsers" name="browser" class="input_box">
-        <option>Kakapo</option>
-        <option>Kereru</option>
-        <option>Pukeko</option>
-      </select>
+      <div>
+        <label for="chalet"><b>Select Your Chalet</b></label>
+        <select name="chalet" id="chalet" class="input_box" required>
+          <option>Kakapo</option>
+          <option>Kereru</option>
+          <option>Pukeko</option>
+        </select>
+      </div>
+
+      <div onclick="document.getElementById('booking_date').showPicker();">
+        <label for="booking_date">Booking Date:</label>
+        <input
+          type="date"
+          id="booking_date"
+          class="input_box"
+          name="booking_date"
+          required
+        />
+      </div>
+      <a href="booking.html">
+        <button type="submit" name="submit" class="booking_submit">
+          Book!
+        </button>
+      </a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -479,5 +519,6 @@
     <script src="js/imageanimations.js" defer></script>
     <script src="js/slideshowanimations.js" defer></script>
     <script src="js/register_login.js" defer></script>
+    <script src="js/booking_page.js" defer></script>
   </body>
 </html>

@@ -19,10 +19,17 @@
 
 /* Add padding to containers */
 .container {
+  position: relative;
   padding: 1.5vw;
+  padding-bottom: 0.5vw;
 }
 
-#container > label {
+.container > .login_switch {
+  position: absolute;
+  right: 5%;
+}
+
+.container > label {
   margin-top: 5vh;
 }
 

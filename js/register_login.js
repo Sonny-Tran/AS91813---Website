@@ -61,12 +61,14 @@ function addData() {
 }
 
 function registercomplete() {
-  document.getElementById("booking_page").style.display = "flex";
+  document.getElementById("booking_page").style.display = "block";
   document.getElementById("register_modal").style.display = "none";
+  booking_button();
   ScrollDown(booking_page, -2);
 }
 
 function login() {
+  correct_details = false;
   email = document.getElementById("login_email").value;
   password = document.getElementById("login_password").value;
   old_data = JSON.parse(localStorage.getItem("login_data"));
@@ -85,16 +87,25 @@ function login() {
         old_data[i].password == obj.password
       )
         correct_details = true;
-      else correct_details = false;
+      else continue;
     }
 
     if (correct_details) {
-      document.getElementById("booking_page").style.display = "flex";
+      document.getElementById("booking_page").style.display = "block";
       document.getElementById("login_modal").style.display = "none";
+      booking_button();
       ScrollDown(booking_page, -2);
       return alert("Login Successfully");
     } else {
       return alert("Incorrect Email or Password");
     }
   }
+}
+
+function booking_button() {
+  let navbar = document.getElementById("navigation_button_bar");
+  navbar.innerHTML = `
+  <a onclick="ScrollDown(Gallery, -2)" class="navigation_button">Gallery</a>
+  <a onclick="ScrollDown(booking_page, -2)" class="navigation_button">Booking</a>
+  `;
 }
