@@ -7,6 +7,7 @@ window.onload = function () {
   html.style.overflowY = "scroll";
 };
 
+// Navigation Bar animation
 const showAnim = gsap
   .from("#navbar", {
     yPercent: -100,
@@ -15,6 +16,7 @@ const showAnim = gsap
   })
   .progress(1);
 
+// Navigation Bar animation based on scroll direction
 ScrollTrigger.create({
   start: "top top",
   end: 99999,
@@ -23,8 +25,8 @@ ScrollTrigger.create({
   },
 });
 
+// Function to scroll down vertically
 function ScrollDown(element, margin) {
-  console.log(element);
   dims = element.getBoundingClientRect();
   marginPercent = (margin / 100) * window.innerHeight;
   offset = window.pageYOffset + dims.top;
@@ -33,8 +35,6 @@ function ScrollDown(element, margin) {
     top: offset + marginPercent,
     behavior: "smooth",
   });
-
-  console.log("ran2");
 }
 
 gsap.to(".about-us", {

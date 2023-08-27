@@ -17,6 +17,7 @@ function addData() {
     poa: POA,
   };
 
+  /*
   if (
     !email ||
     !password ||
@@ -25,19 +26,11 @@ function addData() {
     poi.files.length == 0 ||
     poa.files.length == 0
   )
-    return false;
+    return alert("Please Fill Out all the fields");
+  */
 
-  /* Testing Purposes
-    if (
-      !email ||
-      !password ||
-      !fullname ||
-      !address ||
-      !poi ||
-      !poa
-    )
-      return false;
-    */
+  if (!email || !password || !fullname || !address || !poi || !poa)
+    return alert("Please Fill Out all the fields");
 
   if (old_data == null) {
     old_data = [];
@@ -46,14 +39,13 @@ function addData() {
     registercomplete();
   } else {
     for (let i = 0; i < old_data.length; i++) {
-      console.log(old_data[i].email, email);
       if (old_data[i].email == obj.email) {
         return alert("This email is taken");
       } else {
         continue;
       }
     }
-    console.log("completed");
+
     registercomplete();
     old_data.push(obj);
     localStorage.setItem("login_data", JSON.stringify(old_data));
