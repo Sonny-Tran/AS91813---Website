@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/panel.css" />
-    <link rel="stylesheet" href="styles/register_form.css" />
+    <link rel="stylesheet" href="styles/modal_form.css" />
 
     <!-- Embedded Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -318,19 +318,19 @@
         onsubmit="return false"
       >
         <div class="container">
-          <label for="fullname"><b>Password</b></label>
+          <label for="fullname"><b>Fullname</b></label>
           <input
             id="fullname"
-            type="password"
-            placeholder="Enter Password"
+            type="text"
+            placeholder="Enter Your Fullname"
             class="input_box"
             required
           />
 
-          <label for="email"><b>Username</b></label>
+          <label for="email"><b>Email</b></label>
           <input
             id="email"
-            type="text"
+            type="email"
             placeholder="Enter Your Email"
             class="input_box"
             required
@@ -345,21 +345,33 @@
             required
           />
 
-          <label for="address"><b>Password</b></label>
+          <label for="address"><b>Address</b></label>
           <input
             id="address"
             type="text"
-            placeholder="Enter Password"
+            placeholder="Enter Your Address"
             class="input_box"
             required
           />
 
           <!-- poi stand for proof of identity-->
           <label for="poi"><b>Proof of Identity: </b></label>
-          <input type="file" name="poi" class="input_box" required />
+          <input
+            type="file"
+            id="poi"
+            class="input_box"
+            accept="image/*"
+            required
+          />
 
           <label for="poa"><b>Proof of Address: </b></label>
-          <input type="file" name="poa" class="input_box" required />
+          <input
+            type="file"
+            id="poa"
+            class="input_box"
+            accept="image/*"
+            required
+          />
         </div>
 
         <div
@@ -403,18 +415,18 @@
         onsubmit="return false"
       >
         <div class="container">
-          <label for="email"><b>Username</b></label>
+          <label for="login_email"><b>Username</b></label>
           <input
-            id="email"
+            id="login_email"
             type="text"
             placeholder="Enter Your Email"
             class="input_box"
             required
           />
 
-          <label for="password"><b>Password</b></label>
+          <label for="login_password"><b>Password</b></label>
           <input
-            id="password"
+            id="login_password"
             type="password"
             placeholder="Enter Password"
             class="input_box"
@@ -428,18 +440,13 @@
         >
           <button
             type="button"
-            onclick="document.getElementById('register_modal').style.display='none'"
+            onclick="document.getElementById('login_modal').style.display='none'"
             class="cancelbtn"
           >
             Cancel
           </button>
 
-          <button
-            type="submit"
-            name="submit"
-            class="submit"
-            onclick="addData()"
-          >
+          <button type="submit" name="submit" class="submit" onclick="login()">
             Login
           </button>
 
@@ -454,11 +461,13 @@
       </form>
     </div>
 
+    <div id="booking_page">Test For Now</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/triggerscroll.js" defer></script>
     <script src="js/imageanimations.js" defer></script>
     <script src="js/slideshowanimations.js" defer></script>
-    <script src="js/register.js" defer></script>
+    <script src="js/register_login.js" defer></script>
   </body>
 </html>
