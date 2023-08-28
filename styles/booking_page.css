@@ -30,23 +30,10 @@
   width: 100%;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  background: transparent;
-  bottom: 0;
-  color: transparent;
-  cursor: pointer;
-  height: auto;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
-}
-
 .booking_submit {
   cursor: pointer;
   color: #fffffe;
-  margin-top: 2.5%;
+  margin-top: 5%;
   background-color: #0f0e17;
   border: solid 0.1vw #0f0e17;
   padding: 1vh 1vw;
