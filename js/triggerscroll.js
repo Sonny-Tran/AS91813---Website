@@ -47,6 +47,8 @@ gsap.to(".about-us", {
   },
 });
 
+
+// Panel Animations
 gsap.from("#kakapo", {
   opacity: 0,
   xPercent: 20,

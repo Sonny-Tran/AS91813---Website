@@ -1,6 +1,7 @@
 let expanded = false;
 const button = document.querySelectorAll(".img_expand");
 
+// Animations for sliding out images in panel
 button.forEach((button) => {
   let panel = button.closest(".panel");
   let img_container = panel.querySelector(".image-container");

@@ -143,6 +143,7 @@
       <div style="display: flex; align-items: center">
         <button class="img_expand">&lt;</button>
       </div>
+      <!-- Image Container for sliding out-->
       <div class="image-container">
         <img
           src="img/kakapo/bunk_room.jpg"
@@ -207,6 +208,7 @@
       <div style="display: flex; align-items: center">
         <button class="img_expand">&lt;</button>
       </div>
+      <!-- Image Container for sliding out-->
       <div class="image-container">
         <img
           src="img/kereru/adult_bedroom.jpg"
@@ -271,6 +273,8 @@
       <div style="display: flex; align-items: center">
         <button class="img_expand">&lt;</button>
       </div>
+
+      <!-- Image Container for sliding out-->
       <div class="image-container">
         <img
           src="img/pukeko/adult_bedroom.jpg"
@@ -298,6 +302,8 @@
         />
       </div>
     </div>
+
+    <!-- Gallery Page -->
     <div style="margin: 10vh 0" id="Gallery">
       <h2
         style="
@@ -331,7 +337,7 @@
       onclick="this.style.display='none'; html.style.overflowY='scroll'"
     ></div>
 
-    <!-- The Modal -->
+    <!-- The Register Modal -->
     <div id="register_modal" class="modal">
       <!-- Modal Content -->
       <form
@@ -342,6 +348,7 @@
         method="post"
         enctype="text/plain"
       >
+        <!-- Input Container-->
         <div class="container">
           <label for="fullname"><b>Fullname</b></label>
           <input
@@ -383,6 +390,7 @@
           <input type="file" id="poa" class="input_box" accept="image/*" />
         </div>
 
+        <!-- Button Container-->
         <div
           class="container"
           style="background-color: #f1f1f1; padding-top: 0.5vw"
@@ -415,7 +423,7 @@
       </form>
     </div>
 
-    <!-- The Modal -->
+    <!-- The Login Modal -->
     <div id="login_modal" class="modal">
       <!-- Modal Content -->
       <form
@@ -423,6 +431,7 @@
         autocomplete="on"
         onsubmit="return false"
       >
+        <!-- Input Container-->
         <div class="container">
           <label for="login_email"><b>Email</b></label>
           <input
@@ -443,6 +452,7 @@
           />
         </div>
 
+        <!-- Button Container-->
         <div
           class="container"
           style="background-color: #f1f1f1; padding-top: 0.5vw"
@@ -470,6 +480,7 @@
       </form>
     </div>
 
+    <!-- Booking Page, hidden by default-->
     <div id="booking_page">
       <div>
         <label for="chalet"><b>Select Your Chalet</b></label>
