@@ -13,17 +13,13 @@ button.forEach((button) => {
       img_container.classList.add("image-container-expand");
       expanded = !expanded;
       button.textContent = ">";
-      button.style.borderTopLeftRadius = "0";
-      button.style.borderBottomLeftRadius = "0";
-      button.style.height = "100%";
+      button.classList.add("button_expanded");
     } else {
       textbox.classList.remove("text-box-hide");
       img_container.classList.remove("image-container-expand");
       expanded = false;
       button.textContent = "< ";
-      button.style.borderTopLeftRadius = "5vh";
-      button.style.borderBottomLeftRadius = "5vh";
-      button.style.height = "25%";
+      button.classList.remove("button_expanded");
     }
   });
 });

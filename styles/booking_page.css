@@ -1,3 +1,4 @@
+/* Styling for booking form */
 #booking_page {
   position: relative;
   display: none;
@@ -11,6 +12,7 @@
   margin: 35vh auto;
 }
 
+/* Input boxes */
 #booking_page > .input_box {
   width: 50%;
   font-size: 0.7vw;
@@ -21,6 +23,7 @@
   border: 0.1vw solid #a7a9be;
 }
 
+/* Input field for calender box */
 .booking_date {
   border: none;
   box-sizing: border-box;
@@ -30,6 +33,7 @@
   width: 100%;
 }
 
+/* Submit button */
 .booking_submit {
   cursor: pointer;
   color: #fffffe;

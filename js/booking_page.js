@@ -5,16 +5,13 @@ const year = min.getFullYear();
 const month = (min.getMonth() + 1).toString().padStart(2, "0");
 const day = min.getDate().toString().padStart(2, "0");
 
-const maxmonth = (min.getMonth() + 4).toString().padStart(2, "0"); // Only allow reservations to be booked 3 months in advance
-
 const minDate = `${year}-${month}-${day}`; // Results in "YYYY-MM-DD" for today's date
-const maxDate = `${year}-${maxmonth}-${day}`; // Results in "YYYY-MM-DD" for today's date
 
 // Now to set the MIN date value for the calendar to be today's date
 document.getElementById("booking_date").setAttribute("min", minDate);
-document.getElementById("booking_date").setAttribute("max", maxDate);
 
-input.addEventListener("input", function (e) {
+// Event listener to check if user selects a friday, saturday or sunday
+input.addEventListener("change", function (e) {
   var day = new Date(this.value).getUTCDay();
   if ([1, 2, 3, 4].includes(day)) {
     e.preventDefault();

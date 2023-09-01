@@ -2,19 +2,19 @@
   font-family: "Sora", sans-serif;
 }
 
+/* Remove Page Scrollbar */
 ::-webkit-scrollbar {
   width: 0px; /* make scrollbar dimensions 0 for both horizonal and vertical */
   height: 0px;
   background: transparent; /* make scrollbar transparent */
 }
-
 element {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
 }
 
+/* Stop default margins and padding to prevent any unwanted effects  eg, body default padding of 8px */
 * {
-  /* Stop default margins and padding eg, body default padding of 8px */
   padding: 0;
   margin: 0;
 }
@@ -37,6 +37,7 @@ body {
   display: flex;
 }
 
+/* Styling for navigation bar */
 #navbar {
   position: fixed;
   z-index: 2;
@@ -82,6 +83,7 @@ body {
   box-shadow: none;
 }
 
+/* About us section */
 .about-us {
   /* To align the div in the centre */
   text-align: center;
@@ -99,6 +101,7 @@ body {
   padding: 1vh 1vw;
 }
 
+/* Class for expanding an image to fullscreen */
 #fullpage {
   display: none;
   position: fixed;
@@ -119,6 +122,7 @@ body {
   cursor: zoom-out;
 }
 
+/* Animation for fullscreen image */
 @keyframes expandX {
   0% {
     opacity: 0;
@@ -129,10 +133,4 @@ body {
     opacity: 1;
     transform: scaleX(100%);
   }
-}
-
-.footer {
-  color: #fffffe;
-  padding: 5vh 5vw;
-  font-size: 1vw;
 }

@@ -13,6 +13,7 @@
   box-shadow: -0.25vw 0.25vw 0.5vw rgb(0, 0, 0, 0.25);
 }
 
+/* Container for text */
 .text-box {
   display: flex;
   flex-direction: column;
@@ -25,11 +26,13 @@
   transition: all 1s;
 }
 
+/* Panel Title Styling */
 .text-box > h2 {
   font-size: 2vw;
   text-decoration: underline;
 }
 
+/* Button to slide images in */
 .img_expand {
   width: 1.5vw; /* Makes Arrows break line instead of expanding div*/
   background-color: #ff8906;
@@ -46,8 +49,19 @@
 
 .img_expand:hover {
   cursor: pointer;
+  border-top-left-radius: 0vh;
+  border-bottom-left-radius: 0vh;
+  height: 100%;
 }
 
+/* Class added to img_expand button when expanded using javascript in imageanimations.js */
+.button_expanded {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 100%;
+}
+
+/* Class added to text-box when expanded using javascript in imageanimations.js */
 .text-box-hide {
   transform: translateX(-10vw);
   opacity: 0;
@@ -57,6 +71,7 @@
   overflow: hidden;
 }
 
+/* Container for panel images */
 .image-container {
   width: 0%;
   position: relative;
@@ -71,11 +86,14 @@
 .image-container:hover {
   cursor: pointer;
 }
+
+/* Class added to image-container when expanded using javascript in imageanimations.js */
 .image-container-expand {
   width: 100vw;
   background-color: #fffffe;
 }
 
+/* Styling for custom horizonal scrollbar */
 .image-container::-webkit-scrollbar {
   background-color: #0f0e17;
   height: 1vw;
@@ -105,6 +123,7 @@
   display: none;
 }
 
+/* Styling for panel images */
 .image2 {
   object-fit: contain;
   z-index: 1;
@@ -112,6 +131,7 @@
   cursor: zoom-in;
 }
 
+/* Grid for content boxes */
 .panel-grid {
   display: grid;
   column-gap: 5vw;
@@ -121,12 +141,13 @@
   margin-top: 3vw;
 }
 
+/* Styling of content box */
 .content-box {
   position: relative;
   display: flex;
   align-items: center;
   border-radius: 1vw;
-  font-size: 0.9vw;
+  font-size: 1vw;
   border: 0.2vw solid #0f0e17;
   background-color: #ff8906;
   color: #fffffe;
@@ -136,12 +157,14 @@
   white-space: nowrap;
 }
 
+/* styling for adult and child icon */
 .img-icon {
   display: flex;
   align-items: center;
   width: 2vw;
 }
 
+/* Styling for big horizontal box down below */
 .content-box-2 {
   position: relative;
   display: flex;

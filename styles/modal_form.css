@@ -24,11 +24,13 @@
   padding-bottom: 0.5vw;
 }
 
+/* Switch button for login and register */
 .container > .login_switch {
   position: absolute;
   right: 5%;
 }
 
+/* Margin-top to space out the input boxes */
 .container > label {
   margin-top: 5vh;
 }
@@ -63,6 +65,7 @@
   width: 50%; /* Could be more or less, depending on screen size */
 }
 
+/* Submit button */
 .submit {
   cursor: pointer;
   color: #fffffe;
